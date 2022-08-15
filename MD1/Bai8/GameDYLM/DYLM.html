@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Do You Love Me</title>
+</head>
+<body style="text-align: center">
+<h1>Do You Love Me</h1>
+<input type="button" value="YES" onclick="yesclick()">
+<input style="position: absolute" type="button" id="No" value="NO" onmouseover="nooo()">
+
+</body>
+<script>
+  function yesclick(){
+    alert('aright')
+  }
+  function nooo(){
+    let max = Math.random()*700;
+    let max1 = Math.random()*700;
+    document.getElementById('No').style.left = max + 'px';
+    document.getElementById('No').style.top = max1 + 'px';
+  }
+</script>
+</html>

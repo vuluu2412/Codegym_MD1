@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quizzzz</title>
+</head>
+<body>
+<!--Bài 1: câu lệnh để hiển thị hộp thoại là: alert.-->
+<!--<script>-->
+<!--  alert('Lưu Hoàng Vũ ')-->
+<!--</script>-->
+<!--Bài 2: Câu lệnh để nhận 1 giá trị từ hộp thoại là: Let -->
+<!--<script>-->
+<!--  let a = +prompt('Nhập số');-->
+<!--  let b = a*a;-->
+<!--  alert(b);-->
+<!--</script>-->
+<!--Bài 3:-->
+<!--<input id="a" type="number">-->
+<!--<input id="b" type="number">-->
+<!--<button onclick="dientich()">Tính</button>-->
+<!--<h1 id="ketqua"> Diện tích là:</h1>-->
+<!--<script>-->
+<!--function dientich (){-->
+<!--  let a = document.getElementById('a').value;-->
+<!--  let b = document.getElementById('b').value;-->
+<!--  let tich = a*b;-->
+<!--  document.getElementById('ketqua').innerHTML = 'Diện tích là: ' + tich;-->
+<!--  }-->
+<!--</script>-->
+<!--Bài 4.a:-->
+<!--<input id="a" type="number">-->
+<!--<button onclick="hinhvuong()">Tính</button>-->
+<!--<p id="kq">Kết quả là</p>-->
+<!--<script>-->
+<!--  function hinhvuong(){-->
+<!--    let a = document.getElementById('a').value;-->
+<!--    let cv = 2*a;-->
+<!--    let dt = a*a;-->
+<!--    document.getElementById('kq').innerHTML = 'Chu vi là:' + cv + ' Diện tích là: ' + dt-->
+<!--  }-->
+<!--</script>-->
+
+<!--              Bài 4.b:-->
+<!--<input placeholder="Nhập a" id="a" type="number">-->
+<!--<input placeholder="Nhập b" id="b" type="number">-->
+<!--<button onclick="binhphuong()">Tính</button>-->
+<!--<p id="kq">Kết quả là</p>-->
+<!--<script>-->
+<!--  function binhphuong(){-->
+<!--    let a = document.getElementById('a').value;-->
+<!--    let dt = a*a;-->
+<!--    let b = document.getElementById('b').value;-->
+<!--    let ab = Math.pow(a,b);-->
+<!--    document.getElementById('kq').innerHTML =  ' a^2 là: ' + dt + ' a^b là: ' + ab-->
+<!--  }-->
+<!--</script>-->>
+<!--Bài 4.ei:Tam giác?-->
+<!--<input placeholder="Nhập a" id="a" type="number">-->
+<!--<input placeholder="Nhập b" id="b" type="number">-->
+<!--<input placeholder="Nhập c" id="c" type="number">-->
+<!--<button onclick="tamgiac()">Tính</button>-->
+<!--<p id="kq">Kết quả là</p>-->
+<!--</body>-->
+<!--</html>-->
+
+<!--<script>-->
+<!--    function tamgiac() {-->
+<!--        let a = +document.getElementById('a').value;-->
+<!--        let b = +document.getElementById('b').value;-->
+<!--        let c = +document.getElementById('c').value;-->
+<!--        if (a > 0 && b > 0 && c > 0 && a + b > c && a + c > b && b + c > a) {-->
+<!--            document.getElementById('kq').innerHTML = 'Là 1 tam giác'-->
+<!--        }if ( a==b || a==c||b==c)-->
+<!--            document.getElementById('kq').innerHTML = 'Là 1 tam giác cân'-->
+<!--        if (a==b && b==c )-->
+<!--            document.getElementById('kq').innerHTML = 'Là 1 tam giác đều'-->
+<!--        }-->
+<!--Bai 4c. tìm tổng.-->
+
+<!--<input placeholder="Nhập a" id="a" type="number">-->
+<!--<input placeholder="Nhập b" id="b" type="number">-->
+<!--<button onclick="tong()">Tính</button>-->
+<!--<p id="kq">Kết quả là</p>-->
+<!--</body>-->
+<!--<script>-->
+<!--    function tong() {-->
+<!--        let a = +document.getElementById('a').value;-->
+<!--        let b = +document.getElementById('b').value;-->
+<!--        let c = (b-a+1)*((a+b)/2);-->
+<!--        document.getElementById('kq').innerHTML = 'Tổng là ' + c;-->
+<!--    }-->
+<!--</script>-->
+Bài 4 Thế kỷ
+<input placeholder="Nhập năm" id="a" type="number">
+<button onclick="TKy()">Tính</button>
+<p id="kq">Kết quả là</p>
+</body>
+<script>
+    function TKy() {
+        let a = +document.getElementById('a').value;
+        let b = Math.ceil(a/100);
+        document.getElementById('kq').innerHTML = 'năm ' + a + ' thuộc kế kỷ ' + b;
+    }
+        </script>

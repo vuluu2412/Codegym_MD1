@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tichdenn</title>
+</head>
+<body>
+<input id="soa" type="number" placeholder="nhập a">
+<button id="tinh" onclick="Tichn()">Tính</button>
+<script>
+  // let n = +prompt("Nhập số");
+  // let Tich=1;
+  // for (i=1;i<=n;i++){
+  //   Tich=Tich*i;
+  // } document.write(Tich);
+    function Tichn() {
+        let n = document.getElementById("soa").value;
+        let Tich = 1;
+        for (i = 1; i <= n; i++) {
+            Tich = Tich * i;
+        }
+        document.write(Tich);
+    }
+</script>
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>join</title>
+</head>
+<body>
+<script>
+  //Bài 1
+  let mycolor = ["red","green","white","black"]
+  console.log(mycolor.join());
+
+  // Bài 2
+  let mang = prompt('Nhập mảng').split("");
+  for (let i=0;i<mang.length;i++){
+    if (mang[i]%2==0 && mang[i+1]%2==0) {
+      mang[i]+= '-'
+    }
+  } console.log(mang.join(''))
+
+  // Bài 3
+  let chu = 'The Quick Brown Fox'
+  let s= ''
+  for (let i=0;i<chu.length;i++){
+    if (chu[i]>= 'A' && chu[i] <= 'Z'){
+      s+=chu[i].toLowerCase();
+    } else if (chu[i]>='a'&& chu[i]<='z'){
+      s+=chu[i].toUpperCase();
+    } else s+= chu[i];
+      } console.log(s);
+</script>
+</body>
+</html>

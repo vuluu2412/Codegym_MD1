@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI</title>
+</head>
+<body>
+<p>Nhập số cân </p>
+<input type="text" id="cn">
+<p>Nhập chiều cao </p>
+<input type="text" id="cc">
+<br>
+<br>
+<button onclick="ketqua()">BMI</button>
+<p id="out">ket qua:</p>
+<script>
+    function ketqua() {
+        let a = document.getElementById('cn').value;
+        let b = document.getElementById('cc').value;
+        let BMI = (a / (b * b));
+        if (BMI < 18.5) {
+            document.getElementById('out').innerHTML = BMI + ' Underweight'
+        }
+        if (BMI > 18.5) {
+            document.getElementById('out').innerHTML = BMI + ' Normal'
+        } else if (BMI < 25) {
+            document.getElementById('out').innerHTML = BMI + ' Normal'
+        } else if (BMI < 30) {
+            document.getElementById('out').innerHTML = BMI + ' Overweight'
+        } else (BMI > 30)
+        {
+            document.getElementById('out').innerHTML = BMI + ' Obese'
+        }
+        }
+
+
+</script>
+
+
+</body>
+</html>

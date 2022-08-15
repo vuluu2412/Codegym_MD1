@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>snt</title>
+</head>
+<body>
+<script>
+    let dem = 0;
+    let so = 2;
+    while (dem < 20) {
+        let snt = true;
+        for ( let n = 2; n < so; n++) {
+            if (so%n==0) {
+                snt = false;
+                break;
+            }
+        }
+        if (snt) {
+            document.write(so + ' ')
+            dem++;
+        }
+        so++;
+    }
+</script>
+</body>
+</html>

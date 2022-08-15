@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>banphim</title>
+</head>
+<body onload="docready()">
+<img id="nobita" src="https://cdn.popsww.com/blog/sites/2/2021/03/nobita-la-ai.jpg" style= "position: absolute; left: 0;top:0;" width="20%">
+</body>
+</html>
+<script>
+  function uparow(){
+    let element=document.getElementById("nobita");
+    element.style.top = parseInt(element.style.top) - 5 + 'px';
+  }
+  function downarow(){
+    let element=document.getElementById("nobita");
+    element.style.top = parseInt(element.style.top) + 5 + 'px';
+  }
+  function leftarow(){
+    let element=document.getElementById("nobita");
+    element.style.left = parseInt(element.style.left) - 5 + 'px';
+  }
+  function  rightarow(){
+    let element= document.getElementById("nobita");
+    element.style.left= parseInt(element.style.left) + 5 +'px';
+  }
+  function moveselection(evt){
+    switch (evt.keyCode){
+      case 37:
+        leftarow();
+        break;
+      case 39:
+        rightarow();
+        break;
+      case 38:
+        uparow();
+        break;
+      case 40:
+        downarow();
+        break;
+    }
+
+  }
+  function docready(){
+      window.addEventListener('keydown',moveselection);
+  }
+</script>

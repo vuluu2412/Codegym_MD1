@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>namnhuan</title>
+</head>
+<body>
+<script>
+    let nam =parseInt(prompt("Nhập năm"));
+    let namnhuan = false;
+    let namby4 = nam % 4 == 0;
+    if (namby4){
+        let namby100 = nam % 100 == 0;
+        if (namby100){
+            let namby400 = nam % 400 == 0;
+            if (namby400){
+                namnhuan = true;
+            }
+        } else {
+            namnhuan = true;
+        }
+    }
+    if (namnhuan){
+        alert(nam + "la nam nhuan");
+    }else {
+        alert(nam + "khong la nam nhuan");
+    }
+
+</script>
+</body>
+</html>

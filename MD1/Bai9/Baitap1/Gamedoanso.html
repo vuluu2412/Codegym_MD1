@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gamedoanso</title>
+</head>
+<body>
+<button id="clickme" onclick="choi()">Chơi</button>
+<script>
+    function choi() {
+        let so = prompt('Bạn muốn đoán số trong khoảng nào');
+        let random = Math.floor(Math.random() * so);
+        let sodoan;
+        let solan = 0
+        let game = false;
+        while (game == false) {
+            sodoan = +prompt('số bạn đoán là');
+            if (sodoan > random) {
+                alert('So bạn đoán lớn hơn')
+            } else if (sodoan < random) {
+                alert('số bạn đoán nhỏ hơn')
+            } else if (sodoan == random) {
+                game = true;
+                alert('Bạn đã đoán đúng')
+            }
+            solan++;
+            if (solan == 4) {
+                alert('Bạn đã hết số lần đoán')
+                break;
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
