@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ontap</title>
+</head>
+<body>
+<script>
+    //  let a = [3,4,5,6,7];
+    // for(let i=0;i<a.length;i++){
+    //     document.write(`<div>${a[i]}</div>`)
+    // }
+    // let arr = [
+    //     [1, 2, 3],
+    //     [6, 7, 8]
+    // ]
+    // let sum = 0;
+    // let Tich = 1;
+    // for (let i = 0; i < arr.length; i++) {
+    //     for (let j = 0; j < arr[i].length; j++) {
+    //         sum = sum + arr[i][j]
+    //         Tich = Tich * arr[i][j];
+    //     }
+    // }
+    // // document.write('sum = ' + sum + ' Tich = ' + Tich)
+    // document.write(`sum = ${sum} Tich = ${Tich}`)
+
+
+    // Đếm các phần tử chia 5 dư 1
+    let value = +prompt('Nhập phần tử')
+    let arr = [
+        [1, 2, 3, 2],
+        [6, 7, 8]
+    ]
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            if (arr[i][j] % 5 == 1) {
+                count = count + 1;
+            }
+            document.write('<br>');
+
+            if (arr[i][j] == value) {
+                document.write(`arr[${i}][${j}]`)
+            }
+        }
+    }
+    document.write(count);
+
+
+</script>
+</body>
+</html>

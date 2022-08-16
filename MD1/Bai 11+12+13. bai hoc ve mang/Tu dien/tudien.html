@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tudien</title>
+</head>
+<body>
+<div>
+    <p>Nhập từ:</p>
+    <input type="text" id="ip1">
+    <button id="btn" onclick="a()">Dịch</button>
+    <h2 id="ketqua">kq</h2>
+</div>
+<script>
+    function a() {
+        let langue = [
+            ["chuối", "táo", "mèo", "chó"],
+            ["banana", "apple", "cat", "dog"]
+        ]
+        let a = document.getElementById('ip1').value;
+        for (let i = 0; i < langue.length; i++) {
+            for (let j = 0; j < langue[i].length; j++) {
+                if (a == langue[i][j]) {
+                    document.getElementById('ketqua').innerHTML = langue[i + 1][j];
+                } else if (a == langue[i + 1][j]) {
+                    document.getElementById('ketqua').innerHTML = langue[i][j];
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

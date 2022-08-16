@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/MD1/Bai7" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/MD1/Moduce1_3.8.2022_Table" vcs="Git" />
   </component>
