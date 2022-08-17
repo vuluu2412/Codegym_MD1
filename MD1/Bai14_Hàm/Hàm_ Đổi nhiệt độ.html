@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi nhiệt độ</title>
+</head>
+<body>
+<div>
+    <h1>Temperature Converter</h1>
+    <label>Fahrenheit</label>
+    <input id="ip1" onchange="temperatureConverter()" oninput="temperatureConverter()" type="number" placeholder="Nhập độ F">
+    <p id="output">Celcius:</p>
+<!--    <button id="btn" oninput="temperatureConverter(this.value)">Tính</button>-->
+</div>
+<script>
+    function temperatureConverter() {
+        let a = document.getElementById("ip1").value;
+        c = (a - 32) / 1.8;
+        // return c;
+        document.getElementById("output").innerHTML = "Celsius: " + c;
+    }
+</script>
+</body>
+</html>
