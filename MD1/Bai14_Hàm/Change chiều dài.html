@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>change chiều dài</title>
+</head>
+<body>
+<script>
+    function feetomet(fet) {
+        let met = 0.305 * fet
+        return met;
+    }
+
+    function mettofet(met) {
+        let feet = 3.279 * met
+        return feet;
+    }
+
+    let a = prompt('Nhập feet');
+    let b = prompt('Nhập meters');
+    document.write(`${a} feet = ${feetomet(a)} met`);
+    document.write("<br>")
+    document.write(`${b} met = ${mettofet(b)} feet`);
+</script>
+</body>
+</html>
