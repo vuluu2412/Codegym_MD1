@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let a2 = ["Ursa", "Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa", "Major", "Leo"];
+    let dem = 0;
+    let input = prompt('Nhập sao')
+    timsao(input);
+
+    function timsao(a) {
+        for (let i = 0; i < a1.length; i++) {
+            if (a === a1[i]) {
+                document.write(a2[i]);
+                dem++;
+                break;
+            }
+        }
+        if (dem === 0) {
+            document.write('Không tìm thấy ngôi sao nào');
+        }
+    }
+</script>
+</body>
+</html>
