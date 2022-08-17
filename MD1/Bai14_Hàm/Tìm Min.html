@@ -6,7 +6,12 @@
 </head>
 <body>
 <script>
-    function findmin(a){
+    let a1 = [-5, -5, 5, 2, -1, -4, 0];
+    let a2 = [7, 8, 9, 45, 23236, 324];
+    let a3 = [];
+    let a4 = [0, 0, 0, 0, 0, 0];
+
+    function findmin(a) {
         let min = a[0];
         for (i = 1; i < a.length; i++) {
             if (min > a[i]) {
@@ -15,12 +20,10 @@
         }
         return min;
     }
-    let a1=[-5,-5,5,2,-1,-4,0];
-    let a2=[7,8,9,45,23236,324];
-    let a3=[];
-    let a4=[0,0,0,0,0,0];
-    let min = findmin(a1);
-    alert(min);
+    document.write(findmin(a1) + "<br>");
+    document.write(findmin(a2) + "<br>");
+    document.write(findmin(a3) + "<br>");
+    document.write(findmin(a4) + "<br>");
 </script>
 </body>
 </html>
