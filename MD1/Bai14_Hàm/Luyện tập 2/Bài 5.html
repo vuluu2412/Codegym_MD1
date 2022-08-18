@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function findmin(num1, num2, num3) {
+
+        let min = num1;
+        if (min > num2) {
+            min = num2;
+        }
+        if (min > num3) {
+            min = num3;
+        }
+        return min
+    }
+
+    let a = prompt('Nhập a');
+    let b = prompt('Nhập b');
+    let c = prompt('Nhập c');
+    document.write(findmin(a, b, c));
+
+
+</script>
+</body>
+</html>

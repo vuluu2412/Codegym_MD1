@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KT số nguyên dương</title>
+</head>
+<body>
+<script>
+  function KTsonguyen(num){
+    let flag = '';
+    if (num>=0){
+      flag = true;
+    } else {
+      flag = false;
+    }
+    return flag;
+  }
+  let a = +prompt();
+  document.write(KTsonguyen(a))
+</script>
+</body>
+</html>
