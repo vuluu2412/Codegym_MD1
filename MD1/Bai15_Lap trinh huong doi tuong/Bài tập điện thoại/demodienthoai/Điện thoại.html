@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>điện thoại</title>
+    <link rel="stylesheet" href="điện thoại.css">
+</head>
+<body>
+<center>
+    <table>
+        <tr>
+            <td class="bg1">
+                <div class="battery" >
+                    <h1 id="time">time</h1>
+                    <p id="batteryip">90</p>
+                    <button class="sac" onclick="chargingip()">Sạc</button>
+                    <button class="nguon" onclick="ACip()">nguồn</button>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                </div>
+                <input type="text" id="ip1"class="ip11">
+            </td>
+            <td class="bg2">
+                <div class="battery" >
+                    <h1 id="time1">time1</h1>
+                    <p id="batterynokia">90</p>
+                    <button class="sac" onclick="chargingnokia()">Sạc</button>
+                    <button class="nguon" onclick="ACnokia()">nguồn</button>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <input type="text" id="ip2"class="ip22">
+                    <h3 id="tinhanden"></h3>
+                </div>
+
+            </td>
+        </tr>
+    </table>
+</center>
+
+<script>
+    function chargingip() {
+        let power = +document.getElementById("batteryip").innerHTML;
+
+            if (power < 100) {
+                power++;
+                document.getElementById("batteryip").innerHTML = power;
+            }
+
+            else {
+                alert('Iphone Đã sạc đầy')
+            }
+    }
+    function ACip(){
+        alert('bật nguồn ip')
+    }
+
+    function outofbattery(){
+        let power = +document.getElementById("batteryip").innerHTML;
+        power = power - 1;
+        document.getElementById("batteryip").innerHTML =power;
+        if(power<=0){
+            alert('Sạc điện thoại đi');
+        document.getElementById("batteryip").innerHTML = 0;
+        }
+    }
+    setInterval(outofbattery,5000)
+
+    function chargingnokia() {
+        let power1 = +document.getElementById("batterynokia").innerHTML;
+        if (power1 < 100) {
+            power1++;
+            document.getElementById("batterynokia").innerHTML = power1;
+        }
+        else {
+            alert('Nokia Đã sạc đầy')
+        }
+    }
+    function ACnokia(){
+        alert('bật nguồn nokia')
+    }
+    function outofbattery1(){
+        let power1 = +document.getElementById("batterynokia").innerHTML;
+        power1 = power1 - 1;
+        document.getElementById("batterynokia").innerHTML =power1;
+        if(power1<=0){
+            alert('Sạc điện thoại đi');
+            document.getElementById("batterynokia").innerHTML = 0;
+        }
+    }
+    setInterval(outofbattery1,5000)
+    let today = new Date();
+    let date = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear();
+    let time = today.getHours() + ':' + today.getMinutes();
+    let dateTime = time + '<br>' + date;
+    document.getElementById("time").innerHTML = dateTime;
+    document.getElementById("time1").innerHTML = dateTime;
+</script>
+</body>
+</html>

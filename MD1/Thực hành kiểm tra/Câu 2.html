@@ -17,8 +17,12 @@
         } res[index]= x;
         for(let i = index+1;i<=num.length;i++){
             res[i]=num[i-1]
-        }
+        } return res;
     }
+    let num = prompt('Nhập chuỗi').split('');
+    let x = +prompt('Nhập số x');
+    let index = +prompt('Nhập vị trí index');
+    document.write(insertNumberToArray(num,x,index));
 </script>
 </body>
 </html>
