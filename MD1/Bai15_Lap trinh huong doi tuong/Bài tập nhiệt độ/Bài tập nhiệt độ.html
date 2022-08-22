@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đổi nhiệt độ</title>
+</head>
+<body>
+<script>
+class Temperature {
+  doc = +prompt('Nhập độ C');
+  constructor(doc) {
+  }
+  getDoc(){
+    return this.doc;
+  }
+  getDof(){
+    return((this.doc*1.8)+32)
+  }
+  getDok(){
+    return(this.doc + 273.15)
+  }
+  getInfo(){
+    alert(`Độ C là: ${this.getDoc()},Độ F là: ${this.getDof()}, Độ K là: ${this.getDok()}`)
+  }
+}
+let temp= new Temperature();
+temp.getInfo();
+</script>
+</body>
+</html>

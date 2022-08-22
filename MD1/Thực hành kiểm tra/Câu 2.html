@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu2</title>
+</head>
+<body>
+<script>
+    function insertNumberToArray(num, x, index) {
+        let res = [];
+        if (index < 0 || index > num.length) {
+            res = num;
+        } else {
+            for (let i=0;i<index;i++){
+                res[i]=num[i];
+            }
+        } res[index]= x;
+        for(let i = index+1;i<=num.length;i++){
+            res[i]=num[i-1]
+        }
+    }
+</script>
+</body>
+</html>
