@@ -1,10 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    class Mouse {
+        name;
+        hp;
+
+        constructor(name, hp) {
+            this.name = name;
+            this.hp = hp;
+        }
+
+        isDied() {
+            if (this.hp <= 0) {
+                alert("Chết rồi")
+            } else {
+                alert("Còn sống")
+            }
+        }
+    }
+    class Cat {
+        name;
+        weight;
+        constructor(name, weight) {
+            this.name = name;
+            this.weight = weight;
+        }
+        eat(mouse) {
+            this.weight++;
+            mouse.hp = mouse.hp -10;
+            mouse.isDied();
+        }
+        getInfo() {
+            alert("Thông tin là" + this.name + "," + this.weight);
+        }
+    }
+    let cat1 = new Cat("tom", 30);
+    let mouse1 = new Mouse("jerry", 20);
+    cat1.getInfo()
+    cat1.eat(mouse1)
+    cat1.eat(mouse1)
+</script>
 </body>
 </html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>điện thoại</title>
+    <link rel="stylesheet" href="điện thoại.css">
+</head>
+<body>
+<center>
+    <table>
+        <tr>
+            <td class="bg1">
+                <div class="battery" >
+                    <h1 id="time">time</h1>
+                    <p id="batteryip">90</p>
+                    <button class="sac" onclick="chargingip()">Sạc</button>
+                    <button class="nguon" onclick="ACip()">nguồn</button>
+                    <h3 id="mess4" class="mess4"></h3>
+                </div>
+                <input type="text" id="ip1"class="ip11">
+                <button id="btn" onclick="mess()" class="mess1">Gửi</button>
+            </td>
+            <td class="bg2">
+                <div class="battery" >
+                    <h1 id="time1">time1</h1>
+                    <p id="batterynokia">90</p>
+                    <button class="sac" onclick="chargingnokia()">Sạc</button>
+                    <button class="nguon" onclick="ACnokia()">nguồn</button>
+                    <input type="text" id="ip2"class="ip22">
+                    <button id="btn2" onclick="mess2()" class="mess3">Gửi</button>
+                    <h3 id="mess1" class="mess2"></h3>
+                </div>
+
+            </td>
+        </tr>
+    </table>
+</center>
+
+<script>
+    function mess(){
+       let message = document.getElementById("ip1").value;
+        document.getElementById("mess1").innerHTML = ` Bạn có 1 tin nhắn đến: ${message}`;
+
+    }
+    function mess2(){
+        let message1 = document.getElementById("ip2").value;
+        document.getElementById("mess4").innerHTML = ` Bạn có 1 tin nhắn đến: ${message1}`;
+
+    }
+    function chargingip() {
+        let power = +document.getElementById("batteryip").innerHTML;
+
+            if (power < 100) {
+                power++;
+                document.getElementById("batteryip").innerHTML = power;
+            }
+
+            else {
+                alert('Iphone Đã sạc đầy')
+            }
+    }
+    function ACip(){
+        alert('bật nguồn ip')
+    }
+
+    function outofbattery(){
+        let power = +document.getElementById("batteryip").innerHTML;
+        power = power - 1;
+        document.getElementById("batteryip").innerHTML =power;
+        if(power<=0){
+            alert('Sạc điện thoại đi');
+        document.getElementById("batteryip").innerHTML = 0;
+        }
+    }
+    setInterval(outofbattery,5000)
+
+    function chargingnokia() {
+        let power1 = +document.getElementById("batterynokia").innerHTML;
+        if (power1 < 100) {
+            power1++;
+            document.getElementById("batterynokia").innerHTML = power1;
+        }
+        else {
+            alert('Nokia Đã sạc đầy')
+        }
+    }
+    function ACnokia(){
+        alert('bật nguồn nokia')
+    }
+    function outofbattery1(){
+        let power1 = +document.getElementById("batterynokia").innerHTML;
+        power1 = power1 - 1;
+        document.getElementById("batterynokia").innerHTML =power1;
+        if(power1<=0){
+            alert('Sạc điện thoại đi');
+            document.getElementById("batterynokia").innerHTML = 0;
+        }
+    }
+    setInterval(outofbattery1,5000)
+    let today = new Date();
+    let date = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear();
+    let time = today.getHours() + ':' + today.getMinutes();
+    let dateTime = time + '<br>' + date;
+    document.getElementById("time").innerHTML = dateTime;
+    document.getElementById("time1").innerHTML = dateTime;
+</script>
+</body>
+</html>

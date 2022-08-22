@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 1</title>
+</head>
+<body>
+<script>
+    function diemthi(num) {
+        let avg = 0;
+        let sum = 0;
+        for (let i = 0; i < num.length; i++) {
+            sum = sum + num[i];
+        }
+        avg = sum / num.length;
+        document.write(`Điểm trung bình là: ${avg}`)
+    }
+    let a = [10, 7, 4, 6, 7, 4];
+    diemthi(a);
+</script>
+</body>
+</html>

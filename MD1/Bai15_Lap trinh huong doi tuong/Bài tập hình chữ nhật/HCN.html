@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+    class Rectangle {
+        x;
+        y;
+        chieudai=+prompt('Nhap chieu dai');
+        chieurong= +prompt('Nhap chieu rong');
+
+        constructor() {}
+        getChieuDai(){
+            return this.chieudai
+        }
+        getChieuRong(){
+            return this.chieurong
+        }
+        getChuvi() {
+             return (this.chieudai + this.chieurong) * 2 ;
+        }
+
+        getDientich() {
+           return  (this.chieudai * this.chieurong) ;
+        }
+
+        getInfo() {
+            alert(`Chiều rộng là : ${this.getChieuRong()}, Chiều dài là: ${this.getChieuDai()},Chu vi là : ${this.getChuvi()},Diện tích là : ${this.getDientich()}`)
+        }
+    }
+
+    function getRandomHex() {
+        return Math.floor(Math.random() * 255);
+    }
+
+    function getRandomColor() {
+        let red = getRandomHex();
+        let green = getRandomHex();
+        let blue = getRandomHex();
+        return "rgb(" + red + "," + blue + "," + green + ")"
+    }
+
+
+
+    let rect = new Rectangle()
+    function createRectangle() {
+        let ctx = document.getElementById("myCanvas").getContext("2d");
+        let chieudai = rect.getChieuDai()
+        let chieurong = rect.getChieuRong()
+        let color = getRandomColor();
+        let x = Math.random() * window.innerWidth;
+        let y = Math.random() * window.innerWidth;
+        ctx.beginPath();
+        ctx.rect(x,y,chieurong,chieudai)
+        ctx.fillStyle = color;
+        ctx.fill();
+        ctx.closePath()
+    }
+
+    createRectangle()
+    rect.getInfo()
+</script>
+</body>
+</html>

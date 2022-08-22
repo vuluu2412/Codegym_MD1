@@ -1,0 +1,73 @@
+td{
+    width: 400px;
+    height: 750px;
+    border: 3px solid #d61b06;
+}
+.battery{
+    position: absolute;
+    margin-top: -310px;
+    margin-left: 300px;
+    }
+.sac{
+    position: absolute;
+    margin-top: 600px;
+    margin-left: -140px;
+}
+.bg1{
+    background: url("iphone.jpg");
+    background-size: cover;
+}
+.bg2{
+    background: url("nokia.jpg");
+    background-size: cover;
+}
+#time{
+    position: absolute;
+    text-align: center;
+    margin-left: -180px;
+    margin-top: 100px;
+}
+#time1{
+    position: absolute;
+    text-align: center;
+    margin-left: -180px;
+    margin-top: 100px;
+}
+.ip11{
+    position: absolute;
+    text-align: center;
+    margin-left: 100px;
+    margin-top: 300px;
+
+}
+.ip22{
+    position: absolute;
+    text-align: center;
+    margin-left: -200px;
+    margin-top: 550px
+
+}
+.mess1{
+    position: absolute;
+    text-align: center;
+    margin-left: 100px;
+    margin-top: 300px;
+}
+.mess2{
+    position: absolute;
+    text-align: center;
+    margin-left: -200px;
+    margin-top: 300px;
+}
+.mess3{
+    position: absolute;
+    text-align: center;
+    margin-left: -230px;
+    margin-top: 550px;
+}
+.mess4{
+    position: absolute;
+    text-align: center;
+    margin-left: -230px;
+    margin-top: 330px;
+}
