@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>game lái xe</title>
+</head>
+<body>
+<img src="hinh-anh-xe-satria-do-min.jpg" id="xe">
+<script>
+    class Xe {
+        x;
+        y;
+        width;
+        height;
+        speedX;
+        speedY;
+
+        constructor(x, y, width, height) {
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+            this.speedX = 10;
+            this.speedY = 0;
+        }
+
+        move(){
+            this.x += this.speedX;
+            this.y += this.speedY;
+            this.disPlay();
+        }
+
+        disPlay() {
+            let xe = document.getElementById('xe');
+            xe.style.position = 'absolute';
+            xe.style.width = this.width + 'px';
+            xe.style.height = this.height + 'px';
+            xe.style.top = this.y + 'px';
+            xe.style.left = this.x + 'px';
+        }
+    }
+
+    let xe1 = new Xe(100, 100, 50, 50);
+    xe1.disPlay();
+    window.addEventListener('keydown', (e) => {
+        if (e.keyCode == 40) {
+            xe1.speedX = 0;
+            xe1.speedY = 10;
+            xe1.move();
+        }
+        if (e.keyCode == 37) {
+            xe1.speedX= -10;
+            xe1.speedY= 0;
+            xe1.move();
+        }
+        if (e.keyCode == 39) {
+            xe1.speedX=10;
+            xe1.speedY=0;
+            xe1.move();
+        }
+        if (e.keyCode == 38) {
+            xe1.speedX=0;
+            xe1.speedY=-10
+            xe1.move();
+        }
+    })
+    setInterval(dichuyen,50);
+    function dichuyen() {
+        xe1.move();
+        if (xe1.x ==0){
+            xe1.speedX= 0;
+            console.log(xe1.x)
+            alert('Game over');
+        } else if (xe1.x ==1660){
+            xe1.speedX= 0;
+            alert('Game over');
+            console.log(xe1.y)
+        }
+        else if (xe1.y == 790){
+            xe1.speedY = 0;
+            alert('Game over')
+            console.log(xe1.y)
+        }
+        else if (xe1.y == 0){
+            xe1.speedY = 0;console.log(xe1.y)
+            alert('Game over')
+
+        }
+    }
+
+
+</script>
+</body>
+</html>

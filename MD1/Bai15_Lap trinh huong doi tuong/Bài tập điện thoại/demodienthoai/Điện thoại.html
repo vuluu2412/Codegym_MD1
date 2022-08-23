@@ -38,13 +38,16 @@
 
 <script>
     function mess(){
+        ACip();
        let message = document.getElementById("ip1").value;
         document.getElementById("mess1").innerHTML = ` Bạn có 1 tin nhắn đến: ${message}`;
+        outofbattery()
 
     }
     function mess2(){
         let message1 = document.getElementById("ip2").value;
         document.getElementById("mess4").innerHTML = ` Bạn có 1 tin nhắn đến: ${message1}`;
+        outofbattery1()
 
     }
     function chargingip() {
@@ -60,7 +63,7 @@
             }
     }
     function ACip(){
-        alert('bật nguồn ip')
+        alert('bật nguồn ip');
     }
 
     function outofbattery(){
