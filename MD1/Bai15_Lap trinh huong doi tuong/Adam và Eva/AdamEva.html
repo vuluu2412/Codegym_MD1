@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AdamEva</title>
+</head>
+<body>
+<script>
+  class Apple{
+    weight;
+    constructor(weight) {
+      this.weight=weight;
+    }
+  }
+  class Human{
+    name;
+    gender;
+    weight;
+    constructor(name,gender,weight) {
+      this.name=name;
+      this.gender=gender;
+      this.weight=weight;
+    }
+    eat(apple){
+      this.weight++;
+      apple.weight=apple.weight--;
+    }
+    getInfor(){
+      alert(` Thông tin là: ${this.name},Giới tính: ${this.gender} Cân nặng: ${this.weight}`)
+    }
+  }
+  let human1 = new Human("Eva","Male",55);
+  let human2 = new Human("Adam","Female",66);
+  let apple1 = new Apple(9);
+  human1.getInfor();
+  human2.getInfor();
+  human1.eat(apple1);
+  human2.eat(apple1);
+</script>
+</body>
+</html>
