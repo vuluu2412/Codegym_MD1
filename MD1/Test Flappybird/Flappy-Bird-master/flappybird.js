@@ -16,7 +16,7 @@ ongduoi.src = "thisimage/ongduoi.png";
 
 let score = 0;
 let khoangcachhaiong = 140; // mình xin phép đặt tên tiếng việt để các bạn dễ hình dung
-let khoangcachdenongduoi = 100; // biến này là khoảng cách từ đầu ống trên đến vị trí đầu ống dưới
+let khoangcachdenongduoi =100; // biến này là khoảng cách từ đầu ống trên đến vị trí đầu ống dưới
 // tạo ra 1 object chim với tọa độ x y là 1 nữa canvas
 let bird = {
     x: hinhnenchinh.width / 5,

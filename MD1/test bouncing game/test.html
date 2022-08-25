@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function component(width, height, color, x, y, type) {
+  ...
+    this.gravity = 0.1;
+    this.gravitySpeed = 0;
+    this.bounce = 0.6;
+    this.update = function() {
+    ...
+    }
+    this.newPos = function() {
+    ...
+    }
+    this.hitBottom = function() {
+      var rockbottom = this.gamearea.canvas.height - this.height;
+      if (this.y > rockbottom) {
+        this.y = rockbottom;
+        //nếu chạm đáy thì nảy lại khối hình với gravitySpeed = -(this.gravitySpeed * this.bounce)
+        //gravitySpeed giảm dần nên this.gravitySpeed * this.bounce cũng giảm dần đến 0 thì kết thúc sự nảy
+        this.gravitySpeed = -(this.gravitySpeed * this.bounce);
+      }
+    }
+  }
+</script>
+</body>
+</html>

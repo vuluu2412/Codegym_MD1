@@ -21,19 +21,24 @@
       this.gender=gender;
       this.weight=weight;
     }
+    tang(){
+
+    }
     eat(apple){
       this.weight++;
-      apple.weight=apple.weight--;
+      apple.weight-=1;
+      this.getInfo(human1);
+      this.getInfo(human2);
     }
-    getInfor(){
+    getInfo(){
       alert(` Thông tin là: ${this.name},Giới tính: ${this.gender} Cân nặng: ${this.weight}`)
     }
   }
   let human1 = new Human("Eva","Male",55);
   let human2 = new Human("Adam","Female",66);
   let apple1 = new Apple(9);
-  human1.getInfor();
-  human2.getInfor();
+  human1.getInfo();
+  human2.getInfo();
   human1.eat(apple1);
   human2.eat(apple1);
 </script>
