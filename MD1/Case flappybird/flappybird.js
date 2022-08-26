@@ -63,14 +63,14 @@ function draw() {
             scor.play();
         }
         // Điều kiện thua game.
-        if (bX + bird.width >= pipe[i].x && bX >= pipe[i].x + pipeNorth.width &&
+        if (bX + bird.width >= pipe[i].x && bX <= pipe[i].x + pipeNorth.width &&
 // so sánh vị trí x của chim với ống.
-            (bY >= pipe[i].y + pipeNorth.height || // Điều kiện chạm ống trên.
+            (bY <= pipe[i].y + pipeNorth.height || // Điều kiện chạm ống trên.
                 bY + bird.height >= pipe[i].y + constant) || // Điều kiện chạm ống dưới
 
             bY + bird.height >= canvas.height - fg.height) // Điều kiện chạm đất.
             {
-            window.location.reload();
+             window.location.reload();
         }
 
     }
@@ -83,7 +83,7 @@ function draw() {
     requestAnimationFrame(draw);
 }
 
-draw();
+draw()
 setTimeout(() => {
     document.getElementById("myaudio").play()
 }, 100)
