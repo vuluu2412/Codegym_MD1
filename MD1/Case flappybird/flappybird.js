@@ -70,7 +70,7 @@ function draw() {
 
             bY + bird.height >= canvas.height - fg.height) // Điều kiện chạm đất.
             {
-            window.location.reload();
+             window.location.reload();
         }
 
     }
@@ -83,7 +83,7 @@ function draw() {
     requestAnimationFrame(draw);
 }
 
-draw();
+draw()
 setTimeout(() => {
     document.getElementById("myaudio").play()
 }, 100)
