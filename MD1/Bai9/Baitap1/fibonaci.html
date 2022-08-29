@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fibonaci</title>
+</head>
+<body>
+<script>
+  let dem = 1;
+  let st1 = 0;
+  let st2 = 1;
+  while (dem<=20){
+    let c = st2;
+    st2 = st1+st2;
+    st1 = c;
+    document.write(st1+' ,');
+    dem = dem + 1;
+  }
+
+
+</script>
+</body>
+</html>
