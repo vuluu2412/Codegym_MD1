@@ -6,18 +6,60 @@
 </head>
 <body>
 <script>
+  // function diemcaothu3(num){
+  //   for (let i = 0;i<num.length;i++){
+  //       for (let j = i+1;j<num.length;j++){
+  //           if (num[i]>num[j]){
+  //               diem = num[i];
+  //               num[i]=num[j];
+  //               num[j]=diem;
+  //           }
+  //       }
+  //   } document.write("Diem cao thu 3 la: "+ num[num.length-3])
+  // }
+  // let num1 = [5,6,10,3,7,8,9];
+
   function diemcaothu3(num){
-    for (let i = 0;i<num.length;i++){
-        for (let j = i+1;j<num.length;j++){
-            if (num[i]>num[j]){
-                diem = num[i];
-                num[i]=num[j];
-                num[j]=diem;
-            }
-        }
-    } document.write("Diem cao thu 3 la: "+ num[num.length-3])
+      for (let i = 0;i<num.length;i++){
+          for (let j = i+1;j<num.length;j++){
+              if (num[i]>num[j]){
+                  diem = num[i];
+                  num[i]=num[j];
+                  num[j]=diem;
+              }
+          }
+      }
+
+      // loc phan tu binh thuong
+     // let newArr=[];
+     //  let temp =0;
+     //  for(let i=0;i<num.length;i++){
+     //      if(temp != num[i]){
+     //          temp = num[i];
+     //          newArr.push(num[i]);
+     //      }
+     //  }
+     //  console.log(newArr[newArr.length-3]);
+
+
+      // dung mang danh dau
+      // let newArr =[];
+      // for(let i=0;i<num.length;i++){
+      //     newArr[num[i]] = 0;
+      //     newArr[num[i]]++;
+      // }
+      // let data=[];
+      // for(let i = 0;i<newArr.length;i++){
+      //     if(newArr[i] >0){
+      //           data.push(i);
+      //     }
+      // }
+      //
+      // console.log(data);
+
+
   }
-  let num1 = [5,6,10,3,7,8,9];
+  let num1 = [5,6,10,10,10,3,7,8,9];
   diemcaothu3(num1)
 </script>
 </body>
