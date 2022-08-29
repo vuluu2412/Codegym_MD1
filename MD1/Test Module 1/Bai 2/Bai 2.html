@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>remove</title>
+</head>
+<body>
+<script>
+    function tryRemoveFromArray(num, index) {
+        let res = [];
+        if (index < 0 || index > num.length) {
+            res = num;
+            return res;
+        } else {
+            for (let i = 0; i < index; i++) {
+                res[i] = num[i]
+            }
+            for (let i = index + 1; i < num.length; i++) {
+                res[i] = num[i]
+            }
+            return res;
+        }
+
+    }
+    let num = prompt('Nhập chuỗi').split('');
+    let index = +prompt('Nhập vị trí index');
+    console.log(tryRemoveFromArray(num, index));
+</script>
+</body>
+</html>

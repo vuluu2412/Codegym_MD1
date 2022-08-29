@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HCN</title>
+</head>
+<body>
+<canvas id="myCanvas" width="200px" height="100px"></canvas>
+<script>
+    class Rectangle {
+        x;
+        y;
+        width;
+        height;
+        color;
+    }
+    let rect = new Rectangle()
+    function creatRectangle() {
+        let ctx = document.getElementById("myCanvas").getContext("2d");
+        ctx.fillStyle = "#000000";
+        ctx.fillRect(10,10,200,100);
+        ctx.closePath();
+    }
+    creatRectangle(rect);
+</script>
+</body>
+</html>
