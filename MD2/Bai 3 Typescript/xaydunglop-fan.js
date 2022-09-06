@@ -57,7 +57,7 @@ var Fan = /** @class */ (function () {
     });
     Fan.prototype.toString = function () {
         if (this._on) {
-            return "T\u1ED1c \u0111\u1ED9 qu\u1EA1t: ".concat(this._speed, ", M\u00E0u s\u1EAFc: ").concat(this._color, ", B\u00E1n k\u00EDnh: ").concat(this._radius, ", fan is off");
+            return "M\u00E0u s\u1EAFc: ".concat(this._color, ", B\u00E1n k\u00EDnh: ").concat(this._radius, ", fan is off");
         }
         else {
             return "T\u1ED1c \u0111\u1ED9 qu\u1EA1t: ".concat(this._speed, ", M\u00E0u s\u1EAFc: ").concat(this._color, ", B\u00E1n k\u00EDnh: ").concat(this._radius, ", fan is on");

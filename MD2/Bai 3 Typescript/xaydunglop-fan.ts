@@ -50,7 +50,7 @@ class Fan {
     }
     toString(){
         if (this._on) {
-            return `Tốc độ quạt: ${this._speed}, Màu sắc: ${this._color}, Bán kính: ${this._radius}, fan is off`
+            return `Màu sắc: ${this._color}, Bán kính: ${this._radius}, fan is off`
         } else {
             return `Tốc độ quạt: ${this._speed}, Màu sắc: ${this._color}, Bán kính: ${this._radius}, fan is on`
         }
