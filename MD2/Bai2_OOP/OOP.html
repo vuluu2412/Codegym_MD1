@@ -1,10 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>OOP</title>
 </head>
 <body>
-$END$
+<script>
+  // ES5
+  // let obj = { name:'Vu',
+  //   age: '28',
+  //   gender: 'Male'
+  // }
+  // function Di(){
+  //   return 100
+  // }
+  // obj.di = Di;
+  // obj.Di();
+  // function Dung(){
+  //   return 30
+  // }
+  // obj.Dung=Dung
+  // function Noi(){
+  //   return 1
+  // }
+  // obj.Noi=Noi;
+  //
+  // console.log(obj)
+
+  //ES6
+  class Nguoi {
+    name = 'Vu';
+    age = 28;
+    gender = 'male';
+    Di(){
+      console.log('100km')
+    }
+    Dung(){
+      console.log('30phut')
+    }
+    Noi(){
+      console.log('1tieng')
+    }
+  }
+  let nguoi1 = new Nguoi
+  console.log(nguoi1);
+  nguoi1.Di()
+  nguoi1.Noi()
+  nguoi1.Dung()
+
+</script>
 </body>
 </html>
