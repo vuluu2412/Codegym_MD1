@@ -1,5 +1,5 @@
 
-function Fibonacci(n=100) {
+function Fibonacci(n) {
     if (n <= 2) {
         return 1
     }
