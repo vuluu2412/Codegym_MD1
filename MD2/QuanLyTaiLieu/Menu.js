@@ -24,7 +24,7 @@ var ThongTinMenu = /** @class */ (function () {
         console.log('4.In Danh Sach Quan Ly Sach');
         console.log('0.Thoat');
     };
-    ThongTinMenu.prototype.chonTapChi = function () {
+    ThongTinMenu.chonTapChi = function () {
         console.log('----------------------');
         console.log('Chao mung ban den voi thu vien quan ly Tap Chi');
         console.log('----------Thu Vien Tap Chi---------------');
@@ -35,7 +35,7 @@ var ThongTinMenu = /** @class */ (function () {
         console.log('0.Thoat');
         readline.question('Nhap lua chon cua ban:');
     };
-    ThongTinMenu.prototype.chonBao = function () {
+    ThongTinMenu.chonBao = function () {
         console.log('----------------------');
         console.log('Chao mung ban den voi thu vien quan ly Bao');
         console.log('----------Thu Vien Bao---------------');

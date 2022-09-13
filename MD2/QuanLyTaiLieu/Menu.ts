@@ -22,7 +22,7 @@ export class ThongTinMenu{
         console.log('4.In Danh Sach Quan Ly Sach');
         console.log('0.Thoat');
     }
-    chonTapChi(){
+    static chonTapChi(){
         console.log('----------------------');
         console.log('Chao mung ban den voi thu vien quan ly Tap Chi');
         console.log('----------Thu Vien Tap Chi---------------');
@@ -33,7 +33,7 @@ export class ThongTinMenu{
         console.log('0.Thoat');
         readline.question('Nhap lua chon cua ban:')
     }
-    chonBao(){
+    static chonBao(){
         console.log('----------------------');
         console.log('Chao mung ban den voi thu vien quan ly Bao');
         console.log('----------Thu Vien Bao---------------');
