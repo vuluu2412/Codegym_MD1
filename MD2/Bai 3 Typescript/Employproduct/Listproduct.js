@@ -19,7 +19,9 @@ var StaffManager = /** @class */ (function () {
         this._staff.push(staff);
     };
     StaffManager.prototype.deleteStaff = function (id) {
-        this._staff.splice(id, 1);
+        this._staff = this._staff.filter(function (item) {
+            return item.id != id;
+        });
     };
     StaffManager.prototype.show = function () {
         for (var i = 0; i < this._staff.length; i++) {
