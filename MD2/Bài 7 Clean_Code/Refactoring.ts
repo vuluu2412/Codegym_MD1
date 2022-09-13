@@ -16,4 +16,4 @@ class FizzBuzz {
     }
 }
 let fizzbuzz = new FizzBuzz(30);
-console.log(fizzbuzz);
+console.log(fizzbuzz.message);

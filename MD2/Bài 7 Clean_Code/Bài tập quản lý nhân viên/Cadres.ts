@@ -1,10 +1,10 @@
-export class Manager {
+export class Cadres {
     private _name : string;
-    private _age: string;
+    private _age: number;
     private _gender:string;
     private _add : string;
 
-    constructor(name: string, age: string, gender: string, add: string) {
+    constructor(name: string, age: number, gender: string, add: string) {
         this._name = name;
         this._age = age;
         this._gender = gender;
@@ -19,11 +19,11 @@ export class Manager {
         this._name = value;
     }
 
-    get age(): string {
+    get age(): number {
         return this._age;
     }
 
-    set age(value: string) {
+    set age(value: number) {
         this._age = value;
     }
 
@@ -41,8 +41,5 @@ export class Manager {
 
     set add(value: string) {
         this._add = value;
-    }
-    addEmployee(){
-
     }
 }
