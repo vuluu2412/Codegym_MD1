@@ -33,8 +33,7 @@ export class CadresManager {
                     console.log(item);
                     flag++;
                 }
-            }
-        )
+            })
         if (flag == 0) {
             console.log("no")
         }
