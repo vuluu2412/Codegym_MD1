@@ -44,6 +44,7 @@ var XuLyMenu = /** @class */ (function () {
                                 console.log(this.taiLieu.showTaiLieu());
                                 break;
                             case 0:
+                                Menu_1.ThongTinMenu.menu();
                                 break;
                         }
                     } while (choice1 != 0);
@@ -75,6 +76,7 @@ var XuLyMenu = /** @class */ (function () {
                                 console.log(this.taiLieu.showTaiLieu());
                                 break;
                             case 0:
+                                Menu_1.ThongTinMenu.menu();
                                 break;
                         }
                     } while (choice2 != 0);
@@ -105,6 +107,7 @@ var XuLyMenu = /** @class */ (function () {
                                 console.log(this.taiLieu.showTaiLieu());
                                 break;
                             case 0:
+                                Menu_1.ThongTinMenu.menu();
                                 break;
                         }
                     } while (choice3 != 0);

@@ -43,6 +43,7 @@ export class XuLyMenu {
                                 console.log(this.taiLieu.showTaiLieu());
                                 break;
                             case 0:
+                                ThongTinMenu.menu();
                                 break;
                         }
                     }
@@ -75,6 +76,7 @@ export class XuLyMenu {
                                 console.log(this.taiLieu.showTaiLieu());
                                 break;
                             case 0:
+                                ThongTinMenu.menu();
                                 break;
                         }
                     }
@@ -106,6 +108,7 @@ export class XuLyMenu {
                                 console.log(this.taiLieu.showTaiLieu());
                                 break;
                             case 0:
+                                ThongTinMenu.menu();
                                 break;
                         }
                     }
