@@ -12,10 +12,9 @@ export class XulyMenuhienthi {
         MenuHienThi.menu();
         let choice
         do {
-            choice = +readline.qution('Nhap lua chon cua ban: ');
+            choice = +readline.question('Nhap lua chon cua ban: ');
             switch (choice) {
                 case 1: {
-let
                 }
             }
         }
