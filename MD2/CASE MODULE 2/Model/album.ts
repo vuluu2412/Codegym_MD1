@@ -1,11 +1,10 @@
 import {Song} from "./Song";
 import {Manage} from "../Service/Manage";
 
-export class Album implements Manage<Song>{
-         _id:number;
-    private _name:string;
-    // private _quantity:number;
-    listSong:Song[]=[];
+export class Album implements Manage<Song> {
+    _id: number;
+    private _name: string;
+    listSong: Song[] = [];
 
 
     constructor(id: number, name: string) {
@@ -29,18 +28,8 @@ export class Album implements Manage<Song>{
         this._name = value;
     }
 
-
-    // get quantity(): number {
-    //     return this._quantity;
-    // }
-    //
-    // set quantity(value: number) {
-    //     this._quantity = value;
-    // }
-
     add(t: Song) {
         this.listSong.push(t);
-        // this._quantity++;
     }
 
     findAll() {
@@ -48,9 +37,9 @@ export class Album implements Manage<Song>{
     }
 
     findById(id: number) {
-        for (let i = 0; i <this.listSong.length ; i++) {
+        for (let i = 0; i < this.listSong.length; i++) {
             console.log(this.listSong[i].id)
-            if (this.listSong[i].id==id){
+            if (this.listSong[i].id == id) {
                 return i;
             }
         }
@@ -60,13 +49,21 @@ export class Album implements Manage<Song>{
 
     remove(id: number) {
         let index = this.findById(id);
-        if (index==-1){
+        if (index == -1) {
             return "Id unavailable need delete"
         } else {
-            this.listSong.splice(index,1);
+            this.listSong.splice(index, 1);
             return "Delete id complete"
         }
     }
+
+    findByName(name: string) {
+        let listName = this.listSong.filter((item) => item.name.toUpperCase().includes(name.toUpperCase()))
+        if (listName.length == 0) {
+            console.log("Not Found Data");
+        } else console.log(listName);
+    }
+
     // update(id:number,name?:string,artist?:string,composers?:string){
     //     let index = this.findById(id);
     //     if (index==-1){

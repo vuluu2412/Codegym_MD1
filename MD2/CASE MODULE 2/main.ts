@@ -1,8 +1,13 @@
 import {ManageAlbum} from "./Service/ManageAlbum";
 import {Album} from "./Model/album";
 import {Song} from "./Model/Song";
+import {ManageAccount} from "./Service/manageAccount";
+import {Account} from "./Model/account";
 
 let listSong: Album = new Album(1, "a");
+let manageAccount = new ManageAccount();
+let admin1 = new Account("admin", "admin");
+manageAccount.addAccount(admin1);
 let listAlbum: ManageAlbum = new ManageAlbum();
 let album1 = new Album(1, "playlist1");
 let album2 = new Album(2, "playlist2");
@@ -13,7 +18,7 @@ listAlbum.add(album3);
 let input = require('readline-sync');
 
 function start() {
-    let menu = `----Library Music----\n1.Add Album\n2.Show Album\n3.Delete Album\n0.Exit`
+    let menu = `----Library Music----\n1.Add Album\n2.Show Album\n3.Delete Album\n4.Edit Album\n5.Find album\n6.Logout\n0.Exit`
     let choice;
     do {
         console.log(menu);
@@ -28,7 +33,15 @@ function start() {
             case 3:
                 removeAlbum();
                 break;
-
+            case 4:
+                editAlbum();
+                break;
+            case 5:
+                findAlbumByName();
+                break;
+            case 6:
+                main();
+                break;
         }
 
     } while (choice != 0);
@@ -54,12 +67,27 @@ function start() {
             start();
         } else {
             let album: Album = listAlbum.findByIndex(choice - 1);
-            menuAlbum(album,choice);
+            menuAlbum(album, choice);
         }
     }
 }
 
-function menuAlbum(album: Album,idAlbum:number) {
+function editAlbum() {
+    let id = +input.question("Enter Id Album Update");
+    if (listAlbum.findById(id) == -1) {
+        console.log("Id unavailable");
+    } else {
+        let name = input.question("Enter Name Album Update");
+        console.log(listAlbum.update(id, name));
+    }
+}
+
+function findAlbumByName() {
+    let name = input.question("Enter Name Find");
+    listAlbum.findByName(name);
+}
+
+function menuAlbum(album: Album, idAlbum: number) {
     let menu = `---Menu Song---\n1.Add Song\n2.Show Song\n3.Delete Song\n4.Find Song\n0.Back`
     let choice;
     do {
@@ -75,6 +103,8 @@ function menuAlbum(album: Album,idAlbum:number) {
             case 3:
                 deleteSong(1);
                 break;
+            case 4:
+                findSong();
         }
     } while (choice != 0)
 }
@@ -93,18 +123,19 @@ function showSong(album: Album) {
         console.log(`${i + 1}-ID:${album.listSong[i].id}, Name: ${album.listSong[i].name}, Artist: ${album.listSong[i].artist}, Composers: ${album.listSong[i].composers}`)
     }
 }
-function deleteSong(idAlbum:number) {
+
+function deleteSong(idAlbum: number) {
     let idSong = +input.question('Enter id song')
     let menu = `Select 1 agree to delete, 2 don't?`;
     let choice;
-    do{
+    do {
         console.log(menu);
         let choice = +input.question('Enter your choice');
-        switch (choice){
+        switch (choice) {
             case 1:
-                let indexMuonXoa = listAlbum.albumList[idAlbum-1].listSong.findIndex(e=>e.id == idSong);
-                listAlbum.albumList[idAlbum-1].listSong.splice(indexMuonXoa,1);
-                listAlbum.albumList[idAlbum-1].listSong.forEach(e=>{
+                let indexMuonXoa = listAlbum.albumList[idAlbum - 1].listSong.findIndex(e => e.id == idSong);
+                listAlbum.albumList[idAlbum - 1].listSong.splice(indexMuonXoa, 1);
+                listAlbum.albumList[idAlbum - 1].listSong.forEach(e => {
                     console.log(e);
                 })
                 break;
@@ -115,24 +146,56 @@ function deleteSong(idAlbum:number) {
 
         }
 
-    }while (choice!=0);
-    // console.log(index)
-    // console.log(listAlbum.albumList[index])
-    // console.log(listAlbum.albumList[index].remove(id));
-    // listAlbum.albumList.forEach(e=>{
-    //     e.listSong
-    // })
-    // console.log(listAlbum.albumList.);
+    } while (choice != 0);
+}
 
+function findSong() {
+    let name = input.question('Enter name find: ');
+    listSong.findByName(name);
 }
 
 function removeAlbum() {
     let id = +input.question('Enter id song delete');
     console.log(listAlbum.remove(id));
+    console.log(listAlbum.findAll());
 }
 
 function main() {
-    start();
+    let menu = `----Login----\n1.Login\n2.Register`
+    console.log(menu);
+    let choice;
+    do {
+        choice = +input.question("Enter Your Select");
+        switch (choice) {
+            case 1:
+                login();
+                break;
+            case 2:
+                register();
+                break;
+        }
+
+    } while (choice != 0);
+}
+
+function login() {
+    let menu = `----WellCome----`
+    console.log(menu);
+    let user = input.question("Enter user: ");
+    let password = input.question("Enter password: ");
+    if (manageAccount.checkAccount(user, password)) {
+        start();
+    }
+}
+
+function register() {
+    let menu = `----Register----`;
+    console.log(menu);
+    let user = input.question("Enter user: ");
+    let password = input.question("Enter password: ");
+    let register = new Account(user, password);
+    manageAccount.addAccount(register);
+    login();
 }
 
 main();
