@@ -5,10 +5,10 @@ export class ManageAccount{
     addAccount(account:Account){
         this.listAccount.push(account);
     }
-    checkAccount(user:string,password:string){
+    checkAccount(user:string,password:string,idUser:number){
         let flag =false;
         this.listAccount.forEach((item)=>{
-            if (item.user==user && item.password==password){
+            if (item.user==user && item.password==password && item.idUser==idUser){
                 return flag = true;
             }
         })

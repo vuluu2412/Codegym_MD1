@@ -14,7 +14,7 @@ export class ManageAlbum implements Manage <Album> {
 
     findById(id: number): number {
         for (let i = 0; i < this.albumList.length; i++) {
-            if (this.albumList[i]._id == id) {
+            if (this.albumList[i].id == id) {
                 return i;
             }
         }

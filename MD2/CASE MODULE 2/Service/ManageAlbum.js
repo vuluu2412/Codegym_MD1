@@ -13,7 +13,7 @@ var ManageAlbum = /** @class */ (function () {
     };
     ManageAlbum.prototype.findById = function (id) {
         for (var i = 0; i < this.albumList.length; i++) {
-            if (this.albumList[i]._id == id) {
+            if (this.albumList[i].id == id) {
                 return i;
             }
         }

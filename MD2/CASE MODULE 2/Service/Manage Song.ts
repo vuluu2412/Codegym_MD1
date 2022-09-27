@@ -12,32 +12,33 @@ export class ManageSong implements Manage<Song> {
         return this.listSong;
     }
 
-    findById(id: number): number {
+    findById(id: number) {
         for (let i = 0; i < this.listSong.length; i++) {
+            console.log(this.listSong[i].id)
             if (this.listSong[i].id == id) {
                 return i;
             }
         }
         return -1;
+
     }
 
     remove(id: number) {
         let index = this.findById(id);
         if (index == -1) {
-            return "Id unavailable need delete";
+            return "Id unavailable need delete"
         } else {
             this.listSong.splice(index, 1);
-            return "Delete Id comPeLeTe"
+            return "Delete id complete"
         }
     }
-
     update(id: number, name?: string) {
         let index = this.findById(id);
         if (index == -1) {
             return "Id unavailable need update"
         } else {
             if (name) this.listSong[index].name = name;
-            return "Update Done"
+            return "Update Done";
         }
     }
 
