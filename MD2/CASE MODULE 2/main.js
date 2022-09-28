@@ -10,12 +10,12 @@ var manageAccount = new manageAccount_1.ManageAccount();
 var admin1 = new account_1.Account("admin", "admin");
 manageAccount.addAccount(admin1);
 var listAlbum = new ManageAlbum_1.ManageAlbum();
-var album1 = new album_1.Album(1, "playlist1");
-var album2 = new album_1.Album(2, "playlist2");
-var album3 = new album_1.Album(3, "playlist3");
-listAlbum.add(album1);
-listAlbum.add(album2);
-listAlbum.add(album3);
+// let album1 = new Album(1, "playlist1");
+// let album2 = new Album(2, "playlist2");
+// let album3 = new Album(3, "playlist3");
+// listAlbum.add(album1);
+// listAlbum.add(album2);
+// listAlbum.add(album3);
 var input = require('readline-sync');
 function start() {
     var menu = "----Library Music----\n1.Add Album\n2.Show Album\n3.Delete Album\n4.Edit Album\n5.Find album\n6.Logout\n0.Exit";
@@ -120,7 +120,7 @@ function showSong(album) {
 function deleteSong(idAlbum) {
     var idSong = +input.question('Enter id song');
     var menu = "Select 1 agree to delete, 2 don't?";
-    var choice;
+    var choice = null;
     do {
         console.log(menu);
         var choice_1 = +input.question('Enter your choice');

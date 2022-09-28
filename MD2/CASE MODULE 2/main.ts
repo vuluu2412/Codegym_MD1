@@ -9,12 +9,12 @@ let manageAccount = new ManageAccount();
 let admin1 = new Account("admin", "admin");
 manageAccount.addAccount(admin1);
 let listAlbum: ManageAlbum = new ManageAlbum();
-let album1 = new Album(1, "playlist1");
-let album2 = new Album(2, "playlist2");
-let album3 = new Album(3, "playlist3");
-listAlbum.add(album1);
-listAlbum.add(album2);
-listAlbum.add(album3);
+// let album1 = new Album(1, "playlist1");
+// let album2 = new Album(2, "playlist2");
+// let album3 = new Album(3, "playlist3");
+// listAlbum.add(album1);
+// listAlbum.add(album2);
+// listAlbum.add(album3);
 let input = require('readline-sync');
 
 function start() {
@@ -127,7 +127,7 @@ function showSong(album: Album) {
 function deleteSong(idAlbum: number) {
     let idSong = +input.question('Enter id song')
     let menu = `Select 1 agree to delete, 2 don't?`;
-    let choice;
+    let choice=null;
     do {
         console.log(menu);
         let choice = +input.question('Enter your choice');
