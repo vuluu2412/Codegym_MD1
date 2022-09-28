@@ -48,4 +48,10 @@ export class ManageSong implements Manage<Song> {
             console.log("Not Found Data");
         } else console.log(listName);
     }
+    // addSongAlbum(id:number){
+    //     let idSongAlbum = this.listSong.filter((item)=>{
+    //        return item.id==id
+    //     })
+    //     console.log(idSongAlbum);
+    // }
 }

@@ -126,27 +126,34 @@ function showSong(album: Album) {
 
 function deleteSong(idAlbum: number) {
     let idSong = +input.question('Enter id song')
-    let menu = `Select 1 agree to delete, 2 don't?`;
-    let choice=null;
-    do {
-        console.log(menu);
-        let choice = +input.question('Enter your choice');
-        switch (choice) {
-            case 1:
-                let indexMuonXoa = listAlbum.albumList[idAlbum - 1].listSong.findIndex(e => e.id == idSong);
-                listAlbum.albumList[idAlbum - 1].listSong.splice(indexMuonXoa, 1);
-                listAlbum.albumList[idAlbum - 1].listSong.forEach(e => {
-                    console.log(e);
-                })
-                break;
-            case 2:
-                // @ts-ignore
-                menuAlbum();
-                break;
-
+    // let menu = `Select 1 agree to delete, 2 don't?`;
+    // let choice=0;
+    // do {
+    //     console.log(menu);
+    //     let choice = +input.question('Enter your choice');
+    //     switch (choice) {
+    //         case 1:
+    console.log(listSong);
+    let indexMuonXoa = listSong.listSong.filter((item) => {
+        if (item.id == idSong) {
+            console.log(indexMuonXoa);
         }
+    })
+    //                 listSong.forEach(e => e.id == idSong);
+    // console.log(indexMuonXoa);
+    // listAlbum.albumList[idAlbum - 1].listSong.splice(indexMuonXoa, 1);
+    // listAlbum.albumList[idAlbum - 1].listSong.forEach(e => {
+    //     console.log(e);
+    // })
+    //     break;
+    // case 2:
+    //     // @ts-ignore
+    //     menuAlbum();
+    //     break;
 
-    } while (choice != 0);
+    // }
+
+    // } while (choice != 0);
 }
 
 function findSong() {
