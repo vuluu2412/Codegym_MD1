@@ -7,20 +7,26 @@ import {ManageSong} from "./service/manageSong";
 
 let manageSong:ManageSong = new ManageSong();
 let listSong:Album = new Album();
-// let song1 = new Song(11, "11", "11", "11");
-// manageSong.add(song1);
+let song1 = new Song(11, "11", "11", "11");
+let song2= new Song(22, "22", "22", "22");
+let song3 = new Song(33, "33", "33", "33");
+let song4 = new Song(44, "44", "44", "44");
+manageSong.add(song1);
+manageSong.add(song2);
+manageSong.add(song3);
+manageSong.add(song4);
 let idUser:number
 let manageAccount = new ManageAccount();
 let admin1 = new Account("admin", "admin", 1);
 manageAccount.addAccount(admin1);
 let listAlbum: ManageAlbum = new ManageAlbum();
-let album1 = new Album(1, "playlist1");
-let album2 = new Album(2, "playlist2");
-let album3 = new Album(3, "playlist3");
-listAlbum.add(album1);
-listAlbum.add(album2);
-listAlbum.add(album3);
-let SongAlbum:Song[];
+// let album1 = new Album(1, "playlist1");
+// let album2 = new Album(2, "playlist2");
+// let album3 = new Album(3, "playlist3");
+// listAlbum.add(album1);
+// listAlbum.add(album2);
+// listAlbum.add(album3);
+let SongAlbum:[]=[];
 let input = require('readline-sync');
 
 function start(a: Account) {
@@ -99,7 +105,7 @@ function findAlbumByName() {
 }
 
 function menuAlbum() {
-    let menu = `---Menu Song---\n1.Add Song\n2.Show Song\n3.Delete Song\n4.Find Song\n5.Edit Song\n6.ShowSongAlbum\n0.Back`
+    let menu = `---Menu Song---\n1.Add Song\n2.Show Song\n3.AddSongAlbum\n4.Find Song\n5.Edit Song\n6.ShowSongAlbum\n0.Back`
     let choice;
     do {
         console.log(menu);
@@ -147,13 +153,20 @@ function showSong() {
     console.log(manageSong);
 }
 
+console.log(SongAlbum);
 function songAlbum(SongAlbum) {
     let name = input.question('Enter id want delete');
-    SongAlbum = manageSong.listSong.filter((item) => {
-        return item.name == name
-    })
-    // console.log(SongAlbum);
-    return SongAlbum;
+    for (let i = 0; i <manageSong.listSong.length ; i++) {
+        if (manageSong.listSong[i].name==name){
+            SongAlbum.push(manageSong.listSong[i]);
+        }
+    }
+    // manageSong.listSong.forEach((item) => {
+    //     if (item.name == name) {
+    //         SongAlbum.push(item)
+    //     }
+    // })
+    console.log(SongAlbum);
 }
 
 function findSong() {
@@ -193,6 +206,7 @@ function login() {
     idUser = +input.question("Enter idUser: ");
     let ac = new Account(user, password, idUser)
     if (manageAccount.checkAccount(user, password, idUser)) {
+        SongAlbum =[]
         start(ac);
     }
 }

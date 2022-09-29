@@ -11,6 +11,8 @@ var input = require('readline-sync');
 var listAccount = new manageAccount_1.ManageAccount();
 var listSong = new manageSong_1.ManageSong();
 var listAlbum = new manageAlbum_1.ManageAlbum();
+var admin1 = new account_1.Account("admin", "admin");
+listAccount.add(admin1);
 function mainMenu() {
     var menu = "----Login----\n1.Login\n2.Register\n0.Exit";
     console.log(menu);
@@ -97,18 +99,18 @@ function addAlbum() {
     var id = +input.question("Enter id album:\n");
     for (var i = 0; i < listAlbum.listAlbum.length; i++) {
         if (id == listAlbum.listAlbum[i].id) {
-            console.log("id da ton tai");
+            console.log("id already exists");
             return start();
         }
     }
     var name = input.question("Enter name album:\n");
     if (name == "") {
-        console.log("Ban khong duoc de trong");
+        console.log("You can't name album empty");
         return start();
     }
     var albumUser = config_1.Config.user.user;
     var listSongOfAlbum = [];
-    var album = new album_1.Album(id, name, albumUser, listSongOfAlbum);
+    var album = new album_1.Album(id, name, albumUser);
     listAlbum.add(album);
 }
 function showAlbumUser() {
@@ -123,7 +125,7 @@ function showAlbumUser() {
 }
 function removeAlbum() {
     var id = +input.question('Enter id delete');
-    console.log("Ban co chac chan muon xoa\n 1.Co \n 2.Khong");
+    console.log("are you sure want to delete\n 1.Yes \n 2.No");
     var choice = +input.question();
     switch (choice) {
         case 1:
@@ -182,12 +184,18 @@ function playList() {
 }
 function addSong() {
     var idSong = +input.question('Enter id Song');
-    // let idAlbum = +input.question('Enter id alBum add Song');
+    for (var i = 0; i < listSong.listSong.length; i++) {
+        if (listSong.listSong[i].id == idSong) {
+            console.log("Id unavailable");
+            return playList();
+        }
+    }
     var name = input.question('Enter name song');
     if (name == "") {
-        console.log("Ban chua nhap ten");
+        console.log("You can't name song empty");
         return playList();
     }
+    // let idAlbum = +input.question('Enter id alBum add Song');
     var artists = input.question('Enter name artists of song');
     var composers = input.question('Enter name composers of song');
     var song = new Song_1.Song(idSong, name, artists, composers);
@@ -200,7 +208,7 @@ function showAllSong() {
 }
 function deleteSong() {
     var idSong = +input.question('Enter id song');
-    console.log("Ban co chac chan muon xoa\n 1.Co \n 2.Khong");
+    console.log("you are sure want to delete\n 1.Yes \n 2.No");
     var choice = +input.question();
     switch (choice) {
         case 1:
@@ -220,6 +228,7 @@ function editSong() {
     else {
         var name_2 = input.question("Enter Name Song Update");
         console.log(listSong.update(id, name_2));
+        playList();
     }
 }
 function findSong() {

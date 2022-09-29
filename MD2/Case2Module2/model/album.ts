@@ -7,11 +7,10 @@ export class Album{
     private _listSongOfAlbum: Song[]=[];
 
 
-    constructor(id: number, name: string, albumUser: string, listSongOfAlbum: Song[]) {
+    constructor(id: number, name: string, albumUser: string) {
         this._id = id;
         this._name = name;
         this._albumUser = albumUser;
-        this._listSongOfAlbum = listSongOfAlbum;
     }
 
     get id(): number {

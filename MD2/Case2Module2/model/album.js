@@ -2,12 +2,11 @@
 exports.__esModule = true;
 exports.Album = void 0;
 var Album = /** @class */ (function () {
-    function Album(id, name, albumUser, listSongOfAlbum) {
+    function Album(id, name, albumUser) {
         this._listSongOfAlbum = [];
         this._id = id;
         this._name = name;
         this._albumUser = albumUser;
-        this._listSongOfAlbum = listSongOfAlbum;
     }
     Object.defineProperty(Album.prototype, "id", {
         get: function () {
