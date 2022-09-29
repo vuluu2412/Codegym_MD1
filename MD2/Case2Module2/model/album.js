@@ -2,11 +2,12 @@
 exports.__esModule = true;
 exports.Album = void 0;
 var Album = /** @class */ (function () {
-    function Album(id, name, albumUser) {
+    function Album(id, name, albumUser, listSongOfAlbum) {
         this._listSongOfAlbum = [];
         this._id = id;
         this._name = name;
         this._albumUser = albumUser;
+        this._listSongOfAlbum = listSongOfAlbum;
     }
     Object.defineProperty(Album.prototype, "id", {
         get: function () {
@@ -28,22 +29,22 @@ var Album = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
-    Object.defineProperty(Album.prototype, "listSongOfAlbum", {
-        get: function () {
-            return this._listSongOfAlbum;
-        },
-        set: function (value) {
-            this._listSongOfAlbum = value;
-        },
-        enumerable: false,
-        configurable: true
-    });
     Object.defineProperty(Album.prototype, "albumUser", {
         get: function () {
             return this._albumUser;
         },
         set: function (value) {
             this._albumUser = value;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(Album.prototype, "listSongOfAlbum", {
+        get: function () {
+            return this._listSongOfAlbum;
+        },
+        set: function (value) {
+            this._listSongOfAlbum = value;
         },
         enumerable: false,
         configurable: true

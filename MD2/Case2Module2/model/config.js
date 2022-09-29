@@ -4,7 +4,7 @@ exports.Config = void 0;
 var Config = /** @class */ (function () {
     function Config() {
     }
-    Config.account = null;
+    Config.user = null;
     return Config;
 }());
 exports.Config = Config;

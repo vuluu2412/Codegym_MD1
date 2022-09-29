@@ -1,20 +1,20 @@
-"use strict";
-exports.__esModule = true;
-var manageAccount_1 = require("./service/manageAccount");
-var manageSong_1 = require("./service/manageSong");
-var manageAlbum_1 = require("./service/manageAlbum");
-var config_1 = require("./model/config");
-var account_1 = require("./model/account");
-var album_1 = require("./model/album");
-var Song_1 = require("./model/Song");
-var input = require('readline-sync');
-var listAccount = new manageAccount_1.ManageAccount();
-var listSong = new manageSong_1.ManageSong();
-var listAlbum = new manageAlbum_1.ManageAlbum();
+import {ManageAccount} from "./service/manageAccount";
+import {ManageSong} from "./service/manageSong";
+import {ManageAlbum} from "./service/manageAlbum";
+import {Config} from "./model/config";
+import {Account} from "./model/account";
+import {Album} from "./model/album";
+import {Song} from "./model/Song";
+
+let input = require('readline-sync');
+let listAccount = new ManageAccount();
+let listSong = new ManageSong();
+let listAlbum = new ManageAlbum();
+
 function mainMenu() {
-    var menu = "----Login----\n1.Login\n2.Register\n0.Exit";
+    let menu = `----Login----\n1.Login\n2.Register\n0.Exit`
     console.log(menu);
-    var choice;
+    let choice;
     do {
         choice = +input.question('Enter Your Select');
         switch (choice) {
@@ -27,16 +27,17 @@ function mainMenu() {
         }
     } while (choice != 0);
 }
+
 function login() {
-    var menu = "----Login----";
+    let menu = "----Login----";
     console.log(menu);
-    var user = input.question("Enter user\n");
-    var password = input.question("Enter password\n");
-    var loginUser = false;
-    for (var i = 0; i < listAccount.listAccount.length; i++) {
+    let user = input.question("Enter user\n");
+    let password = input.question("Enter password\n");
+    let loginUser = false;
+    for (let i = 0; i < listAccount.listAccount.length; i++) {
         if (user == listAccount.listAccount[i].user && password == listAccount.listAccount[i].password) {
             loginUser = true;
-            config_1.Config.user = listAccount.listAccount[i];
+            Config.user = listAccount.listAccount[i];
             start();
         }
     }
@@ -45,24 +46,26 @@ function login() {
         mainMenu();
     }
 }
+
 function register() {
-    var menu = "----Register---";
+    let menu = "----Register---";
     console.log(menu);
-    var user = input.question('Enter user\n');
-    for (var i = 0; i < listAccount.listAccount.length; i++) {
+    let user = input.question('Enter user\n');
+    for (let i = 0; i < listAccount.listAccount.length; i++) {
         if (user == listAccount.listAccount[i].user) {
             console.log('This username already exits');
             return login();
         }
     }
-    var password = input.question('Enter password\n');
-    var ac = new account_1.Account(user, password);
+    let password = input.question('Enter password\n');
+    let ac = new Account(user, password);
     listAccount.add(ac);
     login();
 }
+
 function start() {
-    var menu = "----Library Music----\n1.Add Album\n2.Show Album\n3.Delete Album\n4.Edit Album\n5.Find album\n6.Manage Song\n7.Logout\n0.Exit";
-    var choice;
+    let menu = "----Library Music----\n1.Add Album\n2.Show Album\n3.Delete Album\n4.Edit Album\n5.Find album\n6.Manage Song\n7.Logout\n0.Exit";
+    let choice;
     do {
         console.log(menu);
         choice = +input.question("Enter Your Select");
@@ -91,40 +94,43 @@ function start() {
         }
     } while (choice != 0);
 }
+
 function addAlbum() {
-    var menu = "-----Album----";
+    let menu = "-----Album----";
     console.log(menu);
-    var id = +input.question("Enter id album:\n");
-    for (var i = 0; i < listAlbum.listAlbum.length; i++) {
+    let id = +input.question("Enter id album:\n");
+    for (let i = 0; i < listAlbum.listAlbum.length; i++) {
         if (id == listAlbum.listAlbum[i].id) {
             console.log("id da ton tai");
             return start();
         }
     }
-    var name = input.question("Enter name album:\n");
+    let name = input.question("Enter name album:\n");
     if (name == "") {
         console.log("Ban khong duoc de trong");
         return start();
     }
-    var albumUser = config_1.Config.user.user;
-    var listSongOfAlbum = [];
-    var album = new album_1.Album(id, name, albumUser, listSongOfAlbum);
+    let albumUser = Config.user.user;
+    let listSongOfAlbum = [];
+    let album = new Album(id, name, albumUser, listSongOfAlbum);
     listAlbum.add(album);
 }
+
 function showAlbumUser() {
-    var albumUser = [];
-    for (var i = 0; i < listAlbum.listAlbum.length; i++) {
-        if (config_1.Config.user.user == listAlbum.listAlbum[i].albumUser) {
+    let albumUser = [];
+    for (let i = 0; i < listAlbum.listAlbum.length; i++) {
+        if (Config.user.user == listAlbum.listAlbum[i].albumUser) {
             albumUser.push(listAlbum.listAlbum[i]);
         }
     }
     console.log(albumUser);
     start();
 }
+
 function removeAlbum() {
-    var id = +input.question('Enter id delete');
+    let id = +input.question('Enter id delete');
     console.log("Ban co chac chan muon xoa\n 1.Co \n 2.Khong");
-    var choice = +input.question();
+    let choice = +input.question();
     switch (choice) {
         case 1:
             listAlbum.remove(id);
@@ -135,27 +141,29 @@ function removeAlbum() {
             break;
     }
 }
+
 function editAlbum() {
-    var id = +input.question("Enter Id Album Update");
+    let id = +input.question("Enter Id Album Update");
     if (listAlbum.findById(id) == -1) {
         console.log("Id unavailable");
-    }
-    else {
-        var name_1 = input.question("Enter Name Album Update");
+    } else {
+        let name_1 = input.question("Enter Name Album Update");
         console.log(listAlbum.update(id, name_1));
     }
 }
+
 function findAlbumByName() {
-    var name = input.question('Enter Name Album Find');
+    let name = input.question('Enter Name Album Find');
     listAlbum.findByName(name);
 }
+
 function playList() {
-    var menu = "----List Song----\n1.AddSong\n2.ShowSong\n3.DeleteSong\n4.EditSong\n5.FindSong\n6.addSongAlbum\n7.showSongAlbum.";
+    let menu = "----List Song----\n1.AddSong\n2.ShowSong\n3.DeleteSong\n4.EditSong\n5.FindSong\n6.addSongAlbum\n7.showSongAlbum.";
     console.log(menu);
-    var choice = 0;
+    let choice = 0;
     do {
-        var choice_1 = +input.question("Enter your select");
-        switch (choice_1) {
+        let choice = +input.question("Enter your select");
+        switch (choice) {
             case 1:
                 addSong();
                 break;
@@ -180,28 +188,31 @@ function playList() {
         }
     } while (choice != 0);
 }
+
 function addSong() {
-    var idSong = +input.question('Enter id Song');
+    let idSong = +input.question('Enter id Song');
     // let idAlbum = +input.question('Enter id alBum add Song');
-    var name = input.question('Enter name song');
+    let name = input.question('Enter name song');
     if (name == "") {
         console.log("Ban chua nhap ten");
         return playList();
     }
-    var artists = input.question('Enter name artists of song');
-    var composers = input.question('Enter name composers of song');
-    var song = new Song_1.Song(idSong, name, artists, composers);
+    let artists = input.question('Enter name artists of song');
+    let composers = input.question('Enter name composers of song');
+    let song = new Song(idSong, name, artists, composers);
     listSong.add(song);
     playList();
 }
+
 function showAllSong() {
     console.log(listSong.findAll());
     playList();
 }
+
 function deleteSong() {
-    var idSong = +input.question('Enter id song');
+    let idSong = +input.question('Enter id song')
     console.log("Ban co chac chan muon xoa\n 1.Co \n 2.Khong");
-    var choice = +input.question();
+    let choice = +input.question();
     switch (choice) {
         case 1:
             console.log(listSong.remove(idSong));
@@ -212,40 +223,40 @@ function deleteSong() {
             break;
     }
 }
+
 function editSong() {
-    var id = +input.question("Enter Id Song Update");
+    let id = +input.question("Enter Id Song Update");
     if (listSong.findById(id) == -1) {
         console.log("Id unavailable");
-    }
-    else {
-        var name_2 = input.question("Enter Name Song Update");
-        console.log(listSong.update(id, name_2));
+    } else {
+        let name = input.question("Enter Name Song Update");
+        console.log(listSong.update(id, name));
     }
 }
+
 function findSong() {
-    var name = input.question('Enter Name Song Find');
+    let name = input.question('Enter Name Song Find');
     listSong.findByName(name);
 }
+
 function addSongAlbum() {
-    var idSong = +input.question('Enter id song ');
-    var index = listSong.findById(idSong);
+    let idSong = +input.question('Enter id song ');
+    let index = listSong.findById(idSong)
     if (index != -1) {
-        var idAlbum = +input.question('Enter id album');
-        var song = listSong.listSong[index];
+        let idAlbum = +input.question('Enter id album');
+        let song = listSong.listSong[index]
         index = listAlbum.findById(idAlbum);
         if (index != -1) {
             listAlbum.listAlbum[index].listSongOfAlbum.push(song);
             console.log(song);
-        }
-        else
-            console.log('album chua ton tai');
-    }
-    else
-        console.log("bai hat chua ton tai");
+        } else console.log('album chua ton tai');
+    } else console.log("bai hat chua ton tai");
 }
 function showSongAlbum() {
-    var idAlbum = +input.question('Enter id album show');
-    var album = listAlbum.listAlbum[listAlbum.findById(idAlbum)];
+    let idAlbum = +input.question('Enter id album show');
+    let album = listAlbum.listAlbum[listAlbum.findById(idAlbum)];
     console.log(album);
+
 }
+
 mainMenu();
