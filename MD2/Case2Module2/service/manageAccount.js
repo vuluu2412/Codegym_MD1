@@ -9,11 +9,14 @@ var ManageAccount = /** @class */ (function () {
         this.listAccount.push(t);
     };
     ManageAccount.prototype.findAll = function () {
+        return this.listAccount;
     };
     ManageAccount.prototype.findById = function (id) {
         return 0;
     };
     ManageAccount.prototype.remove = function (id) {
+    };
+    ManageAccount.prototype.update = function (id, t) {
     };
     return ManageAccount;
 }());

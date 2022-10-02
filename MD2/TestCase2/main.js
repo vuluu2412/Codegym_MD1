@@ -8,20 +8,26 @@ var account_1 = require("./Model/account");
 var manageSong_1 = require("./service/manageSong");
 var manageSong = new manageSong_1.ManageSong();
 var listSong = new album_1.Album();
-// let song1 = new Song(11, "11", "11", "11");
-// manageSong.add(song1);
+var song1 = new Song_1.Song(11, "11", "11", "11");
+var song2 = new Song_1.Song(22, "22", "22", "22");
+var song3 = new Song_1.Song(33, "33", "33", "33");
+var song4 = new Song_1.Song(44, "44", "44", "44");
+manageSong.add(song1);
+manageSong.add(song2);
+manageSong.add(song3);
+manageSong.add(song4);
 var idUser;
 var manageAccount = new manageAccount_1.ManageAccount();
 var admin1 = new account_1.Account("admin", "admin", 1);
 manageAccount.addAccount(admin1);
 var listAlbum = new ManageAlbum_1.ManageAlbum();
-var album1 = new album_1.Album(1, "playlist1");
-var album2 = new album_1.Album(2, "playlist2");
-var album3 = new album_1.Album(3, "playlist3");
-listAlbum.add(album1);
-listAlbum.add(album2);
-listAlbum.add(album3);
-var SongAlbum;
+// let album1 = new Album(1, "playlist1");
+// let album2 = new Album(2, "playlist2");
+// let album3 = new Album(3, "playlist3");
+// listAlbum.add(album1);
+// listAlbum.add(album2);
+// listAlbum.add(album3);
+var SongAlbum = [];
 var input = require('readline-sync');
 function start(a) {
     var menu = "----Library Music----\n1.Add Album\n2.Show Album\n3.Delete Album\n4.Edit Album\n5.Find album\n6.Logout\n0.Exit";
@@ -95,7 +101,7 @@ function findAlbumByName() {
     listAlbum.findByName(name);
 }
 function menuAlbum() {
-    var menu = "---Menu Song---\n1.Add Song\n2.Show Song\n3.Delete Song\n4.Find Song\n5.Edit Song\n6.ShowSongAlbum\n0.Back";
+    var menu = "---Menu Song---\n1.Add Song\n2.Show Song\n3.AddSongAlbum\n4.Find Song\n5.Edit Song\n6.ShowSongAlbum\n0.Back";
     var choice;
     do {
         console.log(menu);
@@ -142,13 +148,20 @@ function addSong() {
 function showSong() {
     console.log(manageSong);
 }
+console.log(SongAlbum);
 function songAlbum(SongAlbum) {
     var name = input.question('Enter id want delete');
-    SongAlbum = manageSong.listSong.filter(function (item) {
-        return item.name == name;
-    });
-    // console.log(SongAlbum);
-    return SongAlbum;
+    for (var i = 0; i < manageSong.listSong.length; i++) {
+        if (manageSong.listSong[i].name == name) {
+            SongAlbum.push(manageSong.listSong[i]);
+        }
+    }
+    // manageSong.listSong.forEach((item) => {
+    //     if (item.name == name) {
+    //         SongAlbum.push(item)
+    //     }
+    // })
+    console.log(SongAlbum);
 }
 function findSong() {
     var name = input.question('Enter name find: ');
@@ -183,6 +196,7 @@ function login() {
     idUser = +input.question("Enter idUser: ");
     var ac = new account_1.Account(user, password, idUser);
     if (manageAccount.checkAccount(user, password, idUser)) {
+        SongAlbum = [];
         start(ac);
     }
 }
