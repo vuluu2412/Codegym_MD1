@@ -79,4 +79,6 @@ function deleteProDuct(){
     let id = +input.question("Enter Id ProDuct delete");
     console.log(listProduct.remove(id));
 }
+
+// show();
 mainMenu();
