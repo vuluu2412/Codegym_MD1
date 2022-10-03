@@ -12,7 +12,17 @@ var listAccount = new manageAccount_1.ManageAccount();
 var listSong = new manageSong_1.ManageSong();
 var listAlbum = new manageAlbum_1.ManageAlbum();
 var admin1 = new account_1.Account("admin", "admin");
+var song1 = new Song_1.Song(11, "11", "11", "11");
+var song2 = new Song_1.Song(22, "22", "22", "22");
+var song3 = new Song_1.Song(33, "33", "33", "33");
+var song4 = new Song_1.Song(44, "44", "44", "44");
+var song5 = new Song_1.Song(55, "55", "55", "55");
 listAccount.add(admin1);
+listSong.add(song1);
+listSong.add(song2);
+listSong.add(song3);
+listSong.add(song4);
+listSong.add(song5);
 function mainMenu() {
     var menu = "----Login----\n1.Login\n2.Register\n0.Exit";
     console.log(menu);
@@ -109,7 +119,7 @@ function addAlbum() {
         return start();
     }
     var albumUser = config_1.Config.user.user;
-    var listSongOfAlbum = [];
+    // let listSongOfAlbum = [];
     var album = new album_1.Album(id, name, albumUser);
     listAlbum.add(album);
 }
@@ -152,7 +162,7 @@ function findAlbumByName() {
     listAlbum.findByName(name);
 }
 function playList() {
-    var menu = "----List Song----\n1.AddSong\n2.ShowSong\n3.DeleteSong\n4.EditSong\n5.FindSong\n6.addSongAlbum\n7.showSongAlbum.";
+    var menu = "----List Song----\n1.AddSong\n2.ShowSong\n3.DeleteSong\n4.EditSong\n5.FindSong\n6.addSongAlbum\n7.showSongAlbum\n8.Back.";
     console.log(menu);
     var choice = 0;
     do {
@@ -179,6 +189,9 @@ function playList() {
             case 7:
                 showSongAlbum();
                 break;
+            case 8:
+                start();
+                break;
         }
     } while (choice != 0);
 }
@@ -195,7 +208,6 @@ function addSong() {
         console.log("You can't name song empty");
         return playList();
     }
-    // let idAlbum = +input.question('Enter id alBum add Song');
     var artists = input.question('Enter name artists of song');
     var composers = input.question('Enter name composers of song');
     var song = new Song_1.Song(idSong, name, artists, composers);
@@ -245,12 +257,27 @@ function addSongAlbum() {
         if (index != -1) {
             listAlbum.listAlbum[index].listSongOfAlbum.push(song);
             console.log(song);
+            var ip = "You are want add song to album\n1.Yes\n2.No\n";
+            console.log(ip);
+            var choice = void 0;
+            do {
+                choice = +input.question('Enter your select');
+                switch (choice) {
+                    case 1:
+                        addSongAlbum();
+                        break;
+                    case 2:
+                        console.log(song);
+                        playList();
+                        break;
+                }
+            } while (choice != 0);
         }
         else
-            console.log('album chua ton tai');
+            console.log('album unavailable');
     }
     else
-        console.log("bai hat chua ton tai");
+        console.log("Song unavailable");
 }
 function showSongAlbum() {
     var idAlbum = +input.question('Enter id album show');
