@@ -84,10 +84,10 @@ function editProDuct() {
         var sectors = input.question("Enter Sectors ProDuct Update");
         var price = +input.question("Enter Price ProDuct Update");
         var amount = +input.question("Enter Amount ProDuct Update");
-        var date = input.question("Enter Date Product Update");
+        // let date = input.question("Enter Date Product Update");
         var inForProDuct = input.question("Enter InForProDuct Update");
         // let product = new Product(id,name,sectors,price,amount,date,inForProDuct);
-        console.log(listProduct.update(id, name_1, sectors, price, amount, date, inForProDuct));
+        console.log(listProduct.update(id, name_1, sectors, price, amount, Date(), inForProDuct));
     }
 }
 function deleteProDuct() {
