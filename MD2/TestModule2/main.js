@@ -45,13 +45,25 @@ function showProduct() {
 }
 function addProduct() {
     var id = +input.question("Enter Id ProDuct");
+    if (id <= 0) {
+        console.log("id khong hop le");
+        mainMenu();
+    }
     var name = input.question("Enter Name ProDuct");
     var sectors = input.question("Enter Sectors ProDuct");
     var price = +input.question("Enter Price ProDuct");
+    if (price <= 0) {
+        console.log("gia khong hop le");
+        mainMenu();
+    }
     var amount = +input.question("Enter Amount ProDuct");
-    var date = input.question("Enter Date Product");
+    if (amount <= 0) {
+        console.log("so luong khong hop le");
+        mainMenu();
+    }
+    // let date = new Date().getDay();
     var inForProDuct = input.question("Enter InForProDuct");
-    var product = new Product_1.Product(id, name, sectors, price, amount, date, inForProDuct);
+    var product = new Product_1.Product(id, name, sectors, price, amount, Date(), inForProDuct);
     listProduct.add(product);
 }
 function findProDuctByName() {
