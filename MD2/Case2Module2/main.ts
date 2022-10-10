@@ -11,8 +11,17 @@ let listAccount = new ManageAccount();
 let listSong = new ManageSong();
 let listAlbum = new ManageAlbum();
 let admin1 = new Account("admin", "admin");
+let song1 = new Song(11,"11","11","11");
+let song2 = new Song(22,"22","22","22");
+let song3 = new Song(33,"33","33","33");
+let song4 = new Song(44,"44","44","44");
+let song5 = new Song(55,"55","55","55");
 listAccount.add(admin1);
-
+listSong.add(song1);
+listSong.add(song2);
+listSong.add(song3);
+listSong.add(song4);
+listSong.add(song5);
 function mainMenu() {
     let menu = `----Login----\n1.Login\n2.Register\n0.Exit`
     console.log(menu);
@@ -29,7 +38,6 @@ function mainMenu() {
         }
     } while (choice != 0);
 }
-
 function login() {
     let menu = "----Login----";
     console.log(menu);
@@ -48,7 +56,6 @@ function login() {
         mainMenu();
     }
 }
-
 function register() {
     let menu = "----Register---";
     console.log(menu);
@@ -64,7 +71,6 @@ function register() {
     listAccount.add(ac);
     login();
 }
-
 function start() {
     let menu = "----Library Music----\n1.Add Album\n2.Show Album\n3.Delete Album\n4.Edit Album\n5.Find album\n6.Manage Song\n7.Logout\n0.Exit";
     let choice;
@@ -96,7 +102,6 @@ function start() {
         }
     } while (choice != 0);
 }
-
 function addAlbum() {
     let menu = "-----Album----";
     console.log(menu);
@@ -113,11 +118,10 @@ function addAlbum() {
         return start();
     }
     let albumUser = Config.user.user;
-    let listSongOfAlbum = [];
+    // let listSongOfAlbum = [];
     let album = new Album(id, name, albumUser);
     listAlbum.add(album);
 }
-
 function showAlbumUser() {
     let albumUser = [];
     for (let i = 0; i < listAlbum.listAlbum.length; i++) {
@@ -128,7 +132,6 @@ function showAlbumUser() {
     console.log(albumUser);
     start();
 }
-
 function removeAlbum() {
     let id = +input.question('Enter id delete');
     console.log("are you sure want to delete\n 1.Yes \n 2.No");
@@ -143,7 +146,6 @@ function removeAlbum() {
             break;
     }
 }
-
 function editAlbum() {
     let id = +input.question("Enter Id Album Update");
     if (listAlbum.findById(id) == -1) {
@@ -153,14 +155,12 @@ function editAlbum() {
         console.log(listAlbum.update(id, name));
     }
 }
-
 function findAlbumByName() {
     let name = input.question('Enter Name Album Find');
     listAlbum.findByName(name);
 }
-
 function playList() {
-    let menu = "----List Song----\n1.AddSong\n2.ShowSong\n3.DeleteSong\n4.EditSong\n5.FindSong\n6.addSongAlbum\n7.showSongAlbum.";
+    let menu = "----List Song----\n1.AddSong\n2.ShowSong\n3.DeleteSong\n4.EditSong\n5.FindSong\n6.addSongAlbum\n7.showSongAlbum\n8.Back.";
     console.log(menu);
     let choice = 0;
     do {
@@ -187,10 +187,12 @@ function playList() {
             case 7:
                 showSongAlbum();
                 break;
+            case 8:
+                start();
+                break;
         }
     } while (choice != 0);
 }
-
 function addSong() {
     let idSong = +input.question('Enter id Song');
     for (let i = 0; i < listSong.listSong.length; i++) {
@@ -204,20 +206,16 @@ function addSong() {
         console.log("You can't name song empty");
         return playList();
     }
-    // let idAlbum = +input.question('Enter id alBum add Song');
-
     let artists = input.question('Enter name artists of song');
     let composers = input.question('Enter name composers of song');
     let song = new Song(idSong, name, artists, composers);
     listSong.add(song);
     playList();
 }
-
 function showAllSong() {
     console.log(listSong.findAll());
     playList();
 }
-
 function deleteSong() {
     let idSong = +input.question('Enter id song')
     console.log("you are sure want to delete\n 1.Yes \n 2.No");
@@ -232,7 +230,6 @@ function deleteSong() {
             break;
     }
 }
-
 function editSong() {
     let id = +input.question("Enter Id Song Update");
     if (listSong.findById(id) == -1) {
@@ -244,12 +241,10 @@ function editSong() {
     }
 
 }
-
 function findSong() {
     let name = input.question('Enter Name Song Find');
     listSong.findByName(name);
 }
-
 function addSongAlbum() {
     let idSong = +input.question('Enter id song ');
     let index = listSong.findById(idSong)
@@ -260,15 +255,29 @@ function addSongAlbum() {
         if (index != -1) {
             listAlbum.listAlbum[index].listSongOfAlbum.push(song);
             console.log(song);
+            let ip = `You are want add song to album\n1.Yes\n2.No\n`;
+            console.log(ip);
+            let choice;
+            do {
+                choice = +input.question('Enter your select');
+                switch (choice){
+                    case 1:
+                        addSongAlbum();
+                        break;
+                    case 2:
+                        console.log(song);
+                        playList();
+                        break;
+                }
+            }while (choice!=0)
         } else console.log('album unavailable');
     } else console.log("Song unavailable");
-}
 
+}
 function showSongAlbum() {
     let idAlbum = +input.question('Enter id album show');
     let album = listAlbum.listAlbum[listAlbum.findById(idAlbum)];
     console.log(album);
 
 }
-
 mainMenu();
