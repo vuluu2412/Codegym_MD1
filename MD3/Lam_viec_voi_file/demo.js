@@ -30,8 +30,11 @@ fs.writeFile('C:\\Users\\Admin\\Desktop\\CodeGym\\MD3\\Lam_viec_voi_file\\test.t
 
 
 
-//*********Xóa File*********
-// fs.unlink('test.txt',(err)=>{
-//     if (err)throw err;
-//     console.log('File deleted')
-// })
+// *********Xóa File*********
+fs.unlink('test.txt',(err)=>{
+    if (err)throw err;
+    console.log('File deleted')
+})
+
+
+

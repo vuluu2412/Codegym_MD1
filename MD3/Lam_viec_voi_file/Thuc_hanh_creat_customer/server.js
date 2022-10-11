@@ -16,7 +16,7 @@ let server = http.createServer((req, res)=>{
         })
         req.on('end',()=>{
             let name = qs.parse(data).name;
-            fs.writeFile('./data.txt',name,err => {
+            fs.writeFile('./data.txt',name + " , ",{flag:'a'},err => {
                 if (err){
                     console.log('err')
                     return;
