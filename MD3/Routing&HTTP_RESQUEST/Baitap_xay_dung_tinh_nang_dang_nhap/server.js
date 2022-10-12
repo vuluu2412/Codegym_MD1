@@ -23,11 +23,15 @@ handlers.home = (req, res) => {
 };
 handlers.login = (req, res) => {
     fs.readFile('./view/login.html', (err, data) => {
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        res.write(data);
-        res.end();
-        // res.writeHead(301, {'location' : '/home'});
-        // res.end();
+        if(req.method==="GET"){
+            res.writeHead(200, {'Content-Type': 'text/html'});
+            res.write(data);
+            res.end();
+        } else if (req.method==="POST") {
+            //
+            res.writeHead(301, {'location' : '/profile'});
+            res.end();
+        }
     });
 };
 handlers.register = (req, res) => {
