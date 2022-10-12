@@ -36,9 +36,15 @@ handlers.login = (req, res) => {
 };
 handlers.register = (req, res) => {
     fs.readFile('./view/register.html', (err, data) => {
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        res.write(data);
-        res.end();
+        if (req.method==="GET"){
+            res.writeHead(200, {'Content-Type': 'text/html'});
+            res.write(data);
+            res.end();
+        } else if (req.method==="POST"){
+            res.writeHead(301, {'location' : '/login'});
+            res.end();
+        }
+
     });
 };
 handlers.profile = (req, res) => {

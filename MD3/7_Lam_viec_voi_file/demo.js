@@ -2,7 +2,7 @@ const fs = require('fs');
 const content = 'Some content 1 2 3 4 5'
 
 //******* Đọc File *************
-// fs.readFile('C:\\Users\\Admin\\Desktop\\CodeGym\\MD3\\Lam_viec_voi_file\\test.txt','utf-8',(err,data)=>{
+// fs.readFile('C:\\Users\\Admin\\Desktop\\CodeGym\\MD3\\7_Lam_viec_voi_file\\test.txt','utf-8',(err,data)=>{
 // if(err){
 //     console.error(err)
 //     return
@@ -12,7 +12,7 @@ const content = 'Some content 1 2 3 4 5'
 
 
 //********Ghi File ************
-fs.writeFile('C:\\Users\\Admin\\Desktop\\CodeGym\\MD3\\Lam_viec_voi_file\\test.txt',content,err => {
+fs.writeFile('C:\\Users\\Admin\\Desktop\\CodeGym\\MD3\\7_Lam_viec_voi_file\\test.txt',content,err => {
     if (err){
         console.error(err)
         return
