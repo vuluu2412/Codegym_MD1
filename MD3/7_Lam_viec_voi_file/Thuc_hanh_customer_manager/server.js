@@ -14,7 +14,7 @@ let server = http.createServer((req, res)=>{
             html += `</tr>`
         });
     });
-    fs.readFile('./index.html','utf-8',(err, data)=>{
+    fs.readFile('./home.html','utf-8',(err, data)=>{
         res.writeHead(200,{'Content-Type':'text/html'});
         data = data.replace('{list-user}',html)
     res.write(data)

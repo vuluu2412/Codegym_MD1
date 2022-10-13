@@ -56,15 +56,37 @@ handler.register = (req, res) => {
                 });
             })
         })
-        res.writeHead(301, {'location': '/home'});
+        res.writeHead(301, {'location': '/login'});
         res.end();
     }
 }
 handler.login = (req, res) => {
     fs.readFile('./view/login.html', "utf-8", (err, data) => {
-        res.writeHead(200, 'text/html');
-        res.write(data);
-        res.end();
+        if (req.method==="GET"){
+            res.writeHead(200, 'text/html');
+            res.write(data);
+            res.end();
+        } else if (req.method==="POST"){
+            let path = "./register"
+            let data = '';
+            req.on('data',chunk=>{
+                data+=chunk;
+            })
+            req.on('end',()=>{
+                let userInfo = qs.parse(data);
+                let dataRegister = fs.readFileSync('./data/data.json',{encoding:"utf-8",flag:'r'});
+                let dataObj = JSON.parse(dataRegister);
+                for (let i = 0; i <dataObj.length ; i++) {
+                    if (userInfo.name===dataObj[i].name&&userInfo.password===dataObj[i].password){
+                        path = "./home";
+                        break;
+                    }
+                }
+                res.writeHead(301,{'location':path});
+                res.end();
+            })
+        }
+
     })
 }
 handler.notFound = (req, res) => {
