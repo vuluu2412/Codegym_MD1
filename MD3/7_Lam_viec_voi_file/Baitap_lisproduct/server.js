@@ -23,11 +23,12 @@ handler.home = (req, res) => {
     let dataObj = JSON.parse(dataString);
     dataObj.forEach((item,index) => {
         dataFile += '<tr>';
+        dataFile += `${index + 1}`
         dataFile += `<td>${item.id}</td>`
         dataFile += `<td>${item.name}</td>`
         dataFile += `<td>${item.price}</td>`
-        dataFile += `<td><button class = "btn btn-danger" onclick="">Delete</button></td>`
-        dataFile += `<td><button class = "btn btn-danger" onclick="">Update</button></td>`
+        dataFile += `<td><button class = "btn btn-danger" onclick="location.href='/delete/${index}'">Delete</button></td>`
+        dataFile += `<td><button class = "btn btn-danger" onclick="location.href='/edit/${index}'">Update</button></td>`
         dataFile += `</tr>`
     });
     fs.readFile('./view/home.html', 'utf-8', (err, index) => {
@@ -85,17 +86,17 @@ handler.edit = (req, res, index) => {
             data += chunk;
         });
         req.on('end', () => {
-            let product = [];
-            let productInfo = qs.parse(data);
+            let users = [];
+            let usersInfo = qs.parse(data);
             fs.readFile('./data/data.json', 'utf-8', (err, dataJson) => {
-                product = JSON.parse(dataJson);
-                for (let i = 0; i < product.length; i++) {
+                users = JSON.parse(dataJson);
+                for (let i = 0; i < users.length; i++) {
                     if (i === +index) {
-                        product[i] = productInfo;
+                        users[i] = usersInfo;
                     }
                 }
-                product = JSON.stringify(product);
-                fs.writeFile('./data/data.json', product, err => {
+                users = JSON.stringify(users);
+                fs.writeFile('./data/data.json', users, err => {
                     console.log(err);
                 })
             })
@@ -117,13 +118,13 @@ handler.delete = (req,res,index)=>{
             data += chunk;
         });
         req.on('end', () => {
-            let product = [];
+            let users = [];
             // let usersInfo = qs.parse(data);
             fs.readFile('./data/data.json', 'utf-8', (err, dataJson) => {
-                product = JSON.parse(dataJson);
-                product.splice(index,1);
-                product = JSON.stringify(product);
-                fs.writeFile('./data/data.json', product, err => {
+                users = JSON.parse(dataJson);
+                users.splice(index,1);
+                users = JSON.stringify(users);
+                fs.writeFile('./data/data.json', users, err => {
                     console.log(err);
                 })
             })
@@ -132,9 +133,6 @@ handler.delete = (req,res,index)=>{
         res.end();
     }
 }
-// function update(){
-//     res.writeHead(301, {'location': '/edit'});
-// }
 
 
 let router = {
