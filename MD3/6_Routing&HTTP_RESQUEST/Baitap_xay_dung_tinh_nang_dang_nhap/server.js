@@ -1,6 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 const url = require('url');
+const qs = require('qs');
 const StringDecoder = require('string_decoder');
 const server = http.createServer((req, res) => {
     // res.end('Hello Node Js');
@@ -23,25 +24,63 @@ handlers.home = (req, res) => {
 };
 handlers.login = (req, res) => {
     fs.readFile('./view/login.html', (err, data) => {
-        if(req.method==="GET"){
+        if (req.method === "GET") {
             res.writeHead(200, {'Content-Type': 'text/html'});
             res.write(data);
             res.end();
-        } else if (req.method==="POST") {
-            //
-            res.writeHead(301, {'location' : '/profile'});
-            res.end();
+        } else if (req.method === "POST") {
+            let path = "./home"
+            let data = '';
+            req.on('data', chunk => {
+                data += chunk;
+            })
+            req.on('end', () => {
+                const userInfo = qs.parse(data) // Nhận đối tượng từ file Register
+                let dataRegister = fs.readFileSync('./data/data.json', {encoding: 'utf-8', flag: 'r'}); // Đọc data từ file Json,kiểu dữ liệu trả về l string
+                let dataObj = JSON.parse(dataRegister); // Chuyển dữ liệu từ string sang Obj
+                for (let i = 0; i < dataObj.length; i++) {
+                    if (userInfo.name === dataObj[i].name && userInfo.password === dataObj[i].password) {
+                        path = "./profile";
+                        break;
+                    }
+                }
+                res.writeHead(301, {'location': path});
+                res.end();
+            })
         }
     });
-};
+}
 handlers.register = (req, res) => {
     fs.readFile('./view/register.html', (err, data) => {
-        if (req.method==="GET"){
+        if (req.method === "GET") {
             res.writeHead(200, {'Content-Type': 'text/html'});
             res.write(data);
             res.end();
-        } else if (req.method==="POST"){
-            res.writeHead(301, {'location' : '/login'});
+        } else if (req.method === "POST") {
+            let data = '';
+            req.on('data', chunk => {
+                data += chunk;
+            })
+            req.on('end', () => {
+                const userInfo = qs.parse(data) // Nhận đối tượng từ file Register
+                let dataRegister = fs.readFileSync('./data/data.json', {encoding: 'utf-8', flag: 'r'}); // Đọc data từ file Json,kiểu dữ liệu trả về l string
+                let dataObj = JSON.parse(dataRegister); // Chuyển dữ liệu từ string sang Obj
+                // console.log(dataObj);
+                dataObj.push(userInfo); // Đẩy đối tượng vào mảng đối tượng
+                // console.log(dataObj)
+                let content = JSON.stringify(dataObj); // Chuyển từ mảng đối tuợng thành string.
+                // console.log(content);
+                fs.writeFile("./data/data.json", content, (err) => {
+                    if (err) {
+                        console.log(err);
+                    }
+                    console.log("Write Done")
+                })
+            })
+            req.on('error', () => {
+                console.log('error')
+            })
+            res.writeHead(301, {'location': '/login'});
             res.end();
         }
 
