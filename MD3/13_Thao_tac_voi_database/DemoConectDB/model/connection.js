@@ -23,5 +23,5 @@ class Connection {
         });
     }
 }
-Connection.connecting();
-// module.exports = Connection;
+module.exports = Connection;
+
