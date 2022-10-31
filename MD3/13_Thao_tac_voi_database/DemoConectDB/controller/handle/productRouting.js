@@ -1,6 +1,6 @@
 const fs = require('fs');
 const qs = require('qs');
-const ProductService = require('C:\\Users\\84967\\Desktop\\desktop\\Codegym_MD1-master\\Codegym_MD1\\MD3\\13_Thao_tac_voi_database\\DemoConectDB\\service\\ProductService.js');
+const ProductService = require('../../service/ProductService.js');
 // Pull ve copy lai duong dan tuyet doi!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 class ProductRouting {
     static getHtmlProducts(products, indexHtml) {
