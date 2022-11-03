@@ -26,9 +26,20 @@
         }
         return sum;
     }
+    function showListPrime(a){
+        let arr = [];
+        for (let i = 2; i <=a ; i++) {
+            if (isPrime(i)){
+                arr.push(i);
+            }
+        }
+        return arr;
+    }
 
     let a = +prompt('Nhập số');
     document.write(sumOfListPrime(a));
+    document.write(" ");
+        document.write(showListPrime(a));
 </script>
 </body>
 </html>
