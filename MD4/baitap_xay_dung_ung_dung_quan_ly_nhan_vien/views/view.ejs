@@ -8,10 +8,17 @@
     <title>Document</title>
 </head>
 <body>
-<% for (const value of arrayStaff){ %>
-    <h4><%= value.id%></h4>
-    <h4><%= value.name%></h4>
-    <h4><%= value.department%></h4>
-<% } %>
+<table>
+    <% for (const value of arrayStaff){ %>
+        <tr>
+            <td><%= value.id%></td>
+            <td><%= value.name%></td>
+            <td><%= value.department%></td>
+            <td><a href="/delete/<%= value.id %>">Delete</a></td>
+        </tr>
+
+    <% } %>
+</table>
+
 </body>
 </html>
