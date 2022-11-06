@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Books</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        const detail = (id) => {
+            window.open('http://localhost:3000/product/detail'+'?'+'id='+id);
+        };
+    </script>
+</head>
+<body>
+<h3>List books</h3>
+<% for (const item of products) { %>
+    <p>Name: <%= item.name %>
+    </p>
+    <p>Price: <%= item.price %>
+    <p>Author: <%= item.author %>
+    </p>
+    <button onclick="detail('<%= item.id %>')">Detail</button>
+<% } %>
+</body>
+</html>
