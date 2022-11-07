@@ -2,10 +2,11 @@ import {AppDataSource} from "./src/data-source";
 import {PhoneBook} from "./src/entity/PhoneBook";
 import multer from 'multer';
 const upload = multer();
-import express from "express";
+import express, {Request, Response} from "express";
 import bodyParser from 'body-parser';
 const PORT = 3000;
 AppDataSource.initialize().then(async connection => {
+    const PhoneBookRepo = connection.getRepository(PhoneBook);
     const app = express();
     app.set("view engine", "ejs");
     app.set("views", "./src/views");
@@ -28,7 +29,13 @@ AppDataSource.initialize().then(async connection => {
     });
     app.use(bodyParser.json());
     app.use(express.json());
-    const PhoneBookRepo = connection.getRepository(PhoneBook);
+
+
+    app.delete("/phone/:id", async function(req: Request, res: Response) {
+        const phone = await PhoneBookRepo.delete(req.params.id);
+        return res.send(phone);
+    });
+
     app.listen(PORT, () => {
         console.log("App running with port: " + PORT)
     })

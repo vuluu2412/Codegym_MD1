@@ -4,40 +4,36 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const data_source_1 = require("./src/data-source");
-const PhoneBook_1 = require("./src/entity/PhoneBook");
+const Product_1 = require("./src/entity/Product");
 const multer_1 = __importDefault(require("multer"));
 const upload = (0, multer_1.default)();
 const express_1 = __importDefault(require("express"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const PORT = 3000;
 data_source_1.AppDataSource.initialize().then(async (connection) => {
-    const PhoneBookRepo = connection.getRepository(PhoneBook_1.PhoneBook);
     const app = (0, express_1.default)();
     app.set("view engine", "ejs");
     app.set("views", "./src/views");
-    app.get("/phone/create", (req, res) => {
+    app.get("/product/create", (req, res) => {
         res.render("create");
     });
-    app.post("/phone/create", upload.none(), async (req, res) => {
-        const phoneData = {
+    app.post("/product/create", upload.none(), async (req, res) => {
+        const productData = {
             name: req.body.name,
-            address: req.body.address,
-            email: req.body.email,
-            phone: req.body.phone
+            avatar: req.body.avatar,
+            author: req.body.author,
+            price: req.body.price
         };
-        const phone = await PhoneBookRepo.save(phoneData);
+        const product = await ProductRepo.save(productData);
         res.render("success");
     });
-    app.get("/phone/list", async (req, res) => {
-        const phoneBooks = await PhoneBookRepo.find();
-        res.render("list", { phoneBooks: phoneBooks });
+    app.get("/product/list", async (req, res) => {
+        const products = await ProductRepo.find();
+        res.render("list", { products: products });
     });
     app.use(body_parser_1.default.json());
     app.use(express_1.default.json());
-    app.delete("/phone/:id", async function (req, res) {
-        const phone = await PhoneBookRepo.delete(req.params.id);
-        return res.send(phone);
-    });
+    const ProductRepo = connection.getRepository(Product_1.Product);
     app.listen(PORT, () => {
         console.log("App running with port: " + PORT);
     });
