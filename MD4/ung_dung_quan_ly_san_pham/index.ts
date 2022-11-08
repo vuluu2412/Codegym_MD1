@@ -29,6 +29,9 @@ AppDataSource.initialize().then(async connection => {
         const products = await ProductRepo.find();
         res.render("list", {products: products})
     });
+    app.get("/crush", async (req, res) => {
+        res.render("crush")
+    });
     app.use(bodyParser.json());
     app.use(express.json());
     const ProductRepo = connection.getRepository(Product);
