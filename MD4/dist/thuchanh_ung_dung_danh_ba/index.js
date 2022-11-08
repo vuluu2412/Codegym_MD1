@@ -11,7 +11,6 @@ const express_1 = __importDefault(require("express"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const PORT = 3000;
 data_source_1.AppDataSource.initialize().then(async (connection) => {
-    const PhoneBookRepo = connection.getRepository(PhoneBook_1.PhoneBook);
     const app = (0, express_1.default)();
     app.set("view engine", "ejs");
     app.set("views", "./src/views");
@@ -34,10 +33,7 @@ data_source_1.AppDataSource.initialize().then(async (connection) => {
     });
     app.use(body_parser_1.default.json());
     app.use(express_1.default.json());
-    app.delete("/phone/:id", async function (req, res) {
-        const phone = await PhoneBookRepo.delete(req.params.id);
-        return res.send(phone);
-    });
+    const PhoneBookRepo = connection.getRepository(PhoneBook_1.PhoneBook);
     app.listen(PORT, () => {
         console.log("App running with port: " + PORT);
     });
