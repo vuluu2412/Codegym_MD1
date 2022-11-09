@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>E Store - eCommerce HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="eCommerce HTML Template Free Download" name="keywords">
+    <meta content="eCommerce HTML Template Free Download" name="description">
+
+    <%- include('../partial/style')%>
+</head>
+
+<body>
+<%-include('../partial/navBar')%>
+
+<!-- Contact Start -->
+<div class="contact">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="contact-form">
+                    <form method="post" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Name" name="name" />
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Price" name="price" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Quantity" name="quantity" />
+                        </div>
+                        <div class="form-group">
+                            <input type="file" class="form-control"  name="image" />
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="5" placeholder="Description" name="description"></textarea>
+                        </div>
+                        <div><button class="btn" type="submit">Edit Product</button></div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
+
+<!-- Newsletter Start -->
+<div class="newsletter">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+            </div>
+            <div class="col-md-6">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Newsletter End -->
+
+<!-- Back to Top -->
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+<%-include('../partial/javascript')%>
+</body>
+</html>

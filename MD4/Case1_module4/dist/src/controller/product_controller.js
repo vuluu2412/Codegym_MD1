@@ -10,6 +10,18 @@ class Product_controller {
                 listProduct: products
             });
         };
+        this.showFormCreate = async (req, res) => {
+            res.render('product/create');
+        };
+        this.createProduct = async (req, res) => {
+            await this.productService.saveProduct(req, res);
+        };
+        this.showFormEdit = async (req, res) => {
+            res.render('product/edit');
+        };
+        this.editP = async (req, res) => {
+            await this.productService.editProduct(req, res);
+        };
         this.productService = new product_service_1.Product_service();
     }
 }

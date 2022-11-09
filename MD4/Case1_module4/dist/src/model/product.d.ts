@@ -4,4 +4,5 @@ export declare class Product {
     price: number;
     description: string;
     quantity: number;
+    image: string;
 }

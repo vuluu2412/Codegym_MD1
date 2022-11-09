@@ -12,5 +12,17 @@ export class Product_controller{
             listProduct:products
         });
     }
+    showFormCreate = async (req:Request,res:Response)=>{
+        res.render('product/create');
+    }
+    createProduct = async (req:Request,res:Response)=>{
+        await this.productService.saveProduct(req,res);
+    }
+    showFormEdit = async (req:Request,res:Response)=>{
+        res.render('product/edit');
+    }
+    editP = async (req:Request,res:Response)=>{
+        await this.productService.editProduct(req,res);
+    }
 }
 export default new Product_controller();

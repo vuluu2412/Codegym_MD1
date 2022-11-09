@@ -12,4 +12,6 @@ export class Product {
     public description:string;
     @Column({type:'int'})
     public quantity:number;
+    @Column({type:'varchar'})
+    public image:string;
 }

@@ -994,7 +994,6 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Charset>utf8mb4</Charset>
     </collation>
     <schema id="288" parent="1" name="demo2006">
-      <Current>1</Current>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="289" parent="1" name="homestay">
@@ -1012,383 +1011,477 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <schema id="293" parent="1" name="performance_schema">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="294" parent="1" name="product">
+    <schema id="294" parent="1" name="sakila">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="295" parent="1" name="quanlysinhvien">
+    <schema id="295" parent="1" name="sys">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="296" parent="1" name="sakila">
+    <schema id="296" parent="1" name="world">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="297" parent="1" name="sys">
+    <schema id="297" parent="1" name="yourqueen">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="298" parent="1" name="world">
+    <schema id="298" parent="1" name="bt1_csdl">
+      <Current>1</Current>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="299" parent="1" name="yourqueen">
+    <schema id="299" parent="1" name="city">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <user id="300" parent="1" name="mysql.infoschema">
+    <schema id="300" parent="1" name="databasedemo">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="301" parent="1" name="managerscore">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="302" parent="1" name="module3">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="303" parent="1" name="studenmanagement">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="304" parent="1" name="studentmanager">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <user id="305" parent="1" name="mysql.infoschema">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="301" parent="1" name="mysql.session">
+    <user id="306" parent="1" name="mysql.session">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="302" parent="1" name="mysql.sys">
+    <user id="307" parent="1" name="mysql.sys">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="303" parent="1" name="root">
+    <user id="308" parent="1" name="root">
       <Host>localhost</Host>
     </user>
-    <table id="304" parent="288" name="customer">
+    <user id="309" parent="1" name="user">
+      <Host>localhost</Host>
+      <Plugin>caching_sha2_password</Plugin>
+    </user>
+    <table id="310" parent="298" name="internation">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="305" parent="288" name="order">
+    <table id="311" parent="298" name="productlist">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="306" parent="288" name="orderdetail">
+    <table id="312" parent="298" name="tchitiethdb">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="307" parent="288" name="product">
+    <table id="313" parent="298" name="tchitiethdn">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="308" parent="288" name="productlist">
+    <table id="314" parent="298" name="thoadonban">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <view id="309" parent="288" name="mg">
-      <Definer>root@localhost</Definer>
-      <SourceTextLength>244</SourceTextLength>
-    </view>
-    <view id="310" parent="288" name="mg1">
-      <Definer>root@localhost</Definer>
-      <SourceTextLength>244</SourceTextLength>
-    </view>
-    <view id="311" parent="288" name="mg2">
-      <Definer>root@localhost</Definer>
-      <SourceTextLength>298</SourceTextLength>
-    </view>
-    <view id="312" parent="288" name="mg3">
-      <Definer>root@localhost</Definer>
-      <SourceTextLength>300</SourceTextLength>
-    </view>
-    <view id="313" parent="288" name="tl">
-      <Definer>root@localhost</Definer>
-      <SourceTextLength>243</SourceTextLength>
-    </view>
-    <view id="314" parent="288" name="tl1">
-      <Definer>root@localhost</Definer>
-      <SourceTextLength>297</SourceTextLength>
-    </view>
-    <view id="315" parent="288" name="tl3">
-      <Definer>root@localhost</Definer>
-      <SourceTextLength>299</SourceTextLength>
-    </view>
-    <view id="316" parent="288" name="top3p">
-      <Definer>root@localhost</Definer>
-      <SourceTextLength>161</SourceTextLength>
-    </view>
-    <table id="317" parent="291" name="phone_book">
+    <table id="315" parent="298" name="thoadonnhap">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="318" parent="291" name="product">
+    <table id="316" parent="298" name="tkhachhang">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="319" parent="304" name="id">
+    <table id="317" parent="298" name="tnhacungcap">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="318" parent="298" name="tnhanvien">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="319" parent="298" name="tnhaxuatban">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="320" parent="298" name="tsach">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="321" parent="298" name="ttheloai">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="322" parent="310" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="320" parent="304" name="name">
-      <DataType>varchar(45)|0s</DataType>
-      <Position>2</Position>
-    </column>
-    <column id="321" parent="304" name="age">
-      <DataType>int|0s</DataType>
-      <Position>3</Position>
-    </column>
-    <index id="322" parent="304" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="323" parent="304" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="324" parent="305" name="id">
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="325" parent="305" name="time">
-      <DataType>datetime|0s</DataType>
-      <Position>2</Position>
-    </column>
-    <column id="326" parent="305" name="total">
-      <DataType>int|0s</DataType>
-      <Position>3</Position>
-    </column>
-    <column id="327" parent="305" name="customerId">
-      <DataType>int|0s</DataType>
-      <Position>4</Position>
-    </column>
-    <foreign-key id="328" parent="305" name="FK1">
-      <ColNames>customerId</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>customer</RefTableName>
-    </foreign-key>
-    <index id="329" parent="305" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="330" parent="305" name="FK1_idx">
-      <ColNames>customerId</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="331" parent="305" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="332" parent="306" name="orderId">
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="333" parent="306" name="productId">
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="334" parent="306" name="quantity">
-      <DataType>int|0s</DataType>
-      <Position>3</Position>
-    </column>
-    <foreign-key id="335" parent="306" name="Fk">
-      <ColNames>orderId</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>order</RefTableName>
-    </foreign-key>
-    <foreign-key id="336" parent="306" name="Fk2">
-      <ColNames>productId</ColNames>
-      <RefColNames>id</RefColNames>
-      <RefTableName>product</RefTableName>
-    </foreign-key>
-    <index id="337" parent="306" name="PRIMARY">
-      <ColNames>orderId
-productId</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="338" parent="306" name="Fk2_idx">
-      <ColNames>productId</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="339" parent="306" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="340" parent="307" name="id">
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="341" parent="307" name="name">
-      <DataType>varchar(45)|0s</DataType>
-      <Position>2</Position>
-    </column>
-    <column id="342" parent="307" name="price">
-      <DataType>int|0s</DataType>
-      <Position>3</Position>
-    </column>
-    <column id="343" parent="307" name="quantity">
-      <DataType>int|0s</DataType>
-      <Position>4</Position>
-    </column>
-    <index id="344" parent="307" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="345" parent="307" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="346" parent="308" name="id">
-      <AutoIncrement>11</AutoIncrement>
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="347" parent="308" name="name">
+    <column id="323" parent="310" name="nameInter">
       <DataType>varchar(30)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="348" parent="308" name="price">
-      <DataType>int|0s</DataType>
-      <Position>3</Position>
-    </column>
-    <column id="349" parent="308" name="quantity">
-      <DataType>int|0s</DataType>
-      <Position>4</Position>
-    </column>
-    <index id="350" parent="308" name="PRIMARY">
+    <index id="324" parent="310" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="351" parent="308" name="PRIMARY">
+    <key id="325" parent="310" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="352" parent="309" name="id">
+    <column id="326" parent="311" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="353" parent="309" name="time">
-      <DataType>datetime|0s</DataType>
-      <Position>2</Position>
-    </column>
-    <column id="354" parent="310" name="id">
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="355" parent="310" name="time">
-      <DataType>datetime|0s</DataType>
-      <Position>2</Position>
-    </column>
-    <column id="356" parent="311" name="id">
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="357" parent="311" name="time">
-      <DataType>datetime|0s</DataType>
-      <Position>2</Position>
-    </column>
-    <column id="358" parent="312" name="id">
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="359" parent="312" name="time">
-      <DataType>datetime|0s</DataType>
-      <Position>2</Position>
-    </column>
-    <column id="360" parent="313" name="id">
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="361" parent="313" name="time">
-      <DataType>datetime|0s</DataType>
-      <Position>2</Position>
-    </column>
-    <column id="362" parent="314" name="id">
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="363" parent="314" name="time">
-      <DataType>datetime|0s</DataType>
-      <Position>2</Position>
-    </column>
-    <column id="364" parent="315" name="id">
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="365" parent="315" name="time">
-      <DataType>datetime|0s</DataType>
-      <Position>2</Position>
-    </column>
-    <column id="366" parent="316" name="price">
-      <DataType>int|0s</DataType>
-      <Position>1</Position>
-    </column>
-    <column id="367" parent="317" name="id">
-      <AutoIncrement>2</AutoIncrement>
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="368" parent="317" name="name">
-      <DataType>varchar(255)|0s</DataType>
+    <column id="327" parent="311" name="name">
+      <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="369" parent="317" name="address">
-      <DataType>varchar(255)|0s</DataType>
+    <column id="328" parent="311" name="price">
+      <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="370" parent="317" name="email">
-      <DataType>varchar(255)|0s</DataType>
+    <column id="329" parent="311" name="quantity">
+      <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="371" parent="317" name="phone">
-      <DataType>varchar(255)|0s</DataType>
+    <index id="330" parent="311" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="331" parent="311" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="332" parent="312" name="SoHDB">
+      <DataType>varchar(10)|0s</DataType>
       <NotNull>1</NotNull>
+      <Position>1</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <column id="333" parent="312" name="MaSach">
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <column id="334" parent="312" name="SLBan">
+      <DataType>int|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="335" parent="312" name="KhuyenMai">
+      <DataType>varchar(100)|0s</DataType>
+      <Position>4</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <index id="336" parent="312" name="PRIMARY">
+      <ColNames>SoHDB
+MaSach</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="337" parent="312" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="338" parent="313" name="SoHDN">
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <column id="339" parent="313" name="MaSach">
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <column id="340" parent="313" name="SLNhap">
+      <DataType>int|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="341" parent="313" name="KhuyenMai">
+      <DataType>varchar(100)|0s</DataType>
+      <Position>4</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <index id="342" parent="313" name="PRIMARY">
+      <ColNames>SoHDN
+MaSach</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="343" parent="313" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="344" parent="314" name="SoHDB">
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <column id="345" parent="314" name="MaNV">
+      <DataType>varchar(10)|0s</DataType>
+      <Position>2</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <column id="346" parent="314" name="NgayBan">
+      <DataType>datetime|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="347" parent="314" name="MaKH">
+      <DataType>varchar(10)|0s</DataType>
+      <Position>4</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <index id="348" parent="314" name="PRIMARY">
+      <ColNames>SoHDB</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="349" parent="314" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="350" parent="315" name="SoHDN">
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <column id="351" parent="315" name="MaNV">
+      <DataType>varchar(10)|0s</DataType>
+      <Position>2</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <column id="352" parent="315" name="NgayNhap">
+      <DataType>datetime|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="353" parent="315" name="MaNCC">
+      <DataType>varchar(10)|0s</DataType>
+      <Position>4</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <index id="354" parent="315" name="PRIMARY">
+      <ColNames>SoHDN</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="355" parent="315" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="356" parent="316" name="MaKH">
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <column id="357" parent="316" name="TenKH">
+      <DataType>varchar(50)|0s</DataType>
+      <Position>2</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <column id="358" parent="316" name="DiaChi">
+      <DataType>varchar(150)|0s</DataType>
+      <Position>3</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <column id="359" parent="316" name="DienThoai">
+      <DataType>varchar(15)|0s</DataType>
+      <Position>4</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <index id="360" parent="316" name="PRIMARY">
+      <ColNames>MaKH</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="361" parent="316" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="362" parent="317" name="MaNCC">
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <column id="363" parent="317" name="TenNCC">
+      <DataType>varchar(200)|0s</DataType>
+      <Position>2</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <index id="364" parent="317" name="PRIMARY">
+      <ColNames>MaNCC</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="365" parent="317" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="366" parent="318" name="MaNV">
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <column id="367" parent="318" name="TenNV">
+      <DataType>varchar(50)|0s</DataType>
+      <Position>2</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <column id="368" parent="318" name="GioiTinh">
+      <DataType>varchar(5)|0s</DataType>
+      <Position>3</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <column id="369" parent="318" name="NgaySinh">
+      <DataType>datetime|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <column id="370" parent="318" name="DiaChi">
+      <DataType>varchar(150)|0s</DataType>
       <Position>5</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
     </column>
-    <index id="372" parent="317" name="PRIMARY">
-      <ColNames>id</ColNames>
+    <column id="371" parent="318" name="DienThoai">
+      <DataType>varchar(15)|0s</DataType>
+      <Position>6</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <index id="372" parent="318" name="PRIMARY">
+      <ColNames>MaNV</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="373" parent="317" name="PRIMARY">
+    <key id="373" parent="318" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="374" parent="318" name="id">
-      <AutoIncrement>15</AutoIncrement>
-      <DataType>int|0s</DataType>
+    <column id="374" parent="319" name="MaNXB">
+      <DataType>varchar(10)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
     </column>
-    <column id="375" parent="318" name="name">
-      <DataType>varchar(255)|0s</DataType>
+    <column id="375" parent="319" name="TenNXB">
+      <DataType>varchar(100)|0s</DataType>
       <Position>2</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
     </column>
-    <column id="376" parent="318" name="price">
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="377" parent="318" name="author">
-      <DataType>varchar(30)|0s</DataType>
-      <Position>4</Position>
-    </column>
-    <index id="378" parent="318" name="PRIMARY">
-      <ColNames>id</ColNames>
+    <index id="376" parent="319" name="PRIMARY">
+      <ColNames>MaNXB</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="379" parent="318" name="PRIMARY">
+    <key id="377" parent="319" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="378" parent="320" name="MaSach">
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <column id="379" parent="320" name="TenSach">
+      <DataType>varchar(200)|0s</DataType>
+      <Position>2</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <column id="380" parent="320" name="TacGia">
+      <DataType>varchar(150)|0s</DataType>
+      <Position>3</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <column id="381" parent="320" name="MaTheLoai">
+      <DataType>varchar(10)|0s</DataType>
+      <Position>4</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <column id="382" parent="320" name="MaNXB">
+      <DataType>varchar(10)|0s</DataType>
+      <Position>5</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <column id="383" parent="320" name="DonGiaNhap">
+      <DataType>float|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <column id="384" parent="320" name="DonGiaBan">
+      <DataType>float|0s</DataType>
+      <Position>7</Position>
+    </column>
+    <column id="385" parent="320" name="SoLuong">
+      <DataType>int|0s</DataType>
+      <Position>8</Position>
+    </column>
+    <column id="386" parent="320" name="SoTrang">
+      <DataType>int|0s</DataType>
+      <Position>9</Position>
+    </column>
+    <column id="387" parent="320" name="TrongLuong">
+      <DataType>varchar(50)|0s</DataType>
+      <Position>10</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <column id="388" parent="320" name="Anh">
+      <DataType>varchar(20)|0s</DataType>
+      <Position>11</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <index id="389" parent="320" name="PRIMARY">
+      <ColNames>MaSach</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="390" parent="320" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="391" parent="321" name="MaTheLoai">
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <column id="392" parent="321" name="TenTheLoai">
+      <DataType>varchar(100)|0s</DataType>
+      <Position>2</Position>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </column>
+    <index id="393" parent="321" name="PRIMARY">
+      <ColNames>MaTheLoai</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="394" parent="321" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
