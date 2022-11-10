@@ -6,3 +6,6 @@ productRouter.get('/create',product_controller.showFormCreate);
 productRouter.post('/create',product_controller.createProduct);
 productRouter.get('/edit/:id',product_controller.showFormEdit);
 productRouter.post('/edit/:id',product_controller.editP);
+productRouter.get('/delete/:id',product_controller.showFormDelete);
+productRouter.post('/delete/:id',product_controller.deleteP);
+productRouter.get('/detail/:id',product_controller.showDetail);

@@ -6,6 +6,7 @@ export declare class Product_service {
     saveProduct: (req: Request, res: Response) => Promise<void>;
     editProduct: (req: Request, res: Response) => Promise<void>;
     findId: (req: Request, res: Response) => Promise<any>;
+    deleteProduct: (req: Request, res: Response) => Promise<void>;
 }
 declare const _default: Product_service;
 export default _default;

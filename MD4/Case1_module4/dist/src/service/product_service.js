@@ -23,13 +23,14 @@ class Product_service {
         };
         this.editProduct = async (req, res) => {
             let files = req.files;
+            console.log(files);
             let id = +req.params.id;
             if (files != null) {
                 let product = req.body;
                 console.log(product);
                 let image = files.image;
                 await image.mv('./public/storage/' + image.name);
-                product.image = 'storage/' + image.name;
+                product.image = '/storage/' + image.name;
                 await this.productRepository.update({ id: id }, product);
                 res.redirect(301, '/products');
             }
@@ -37,6 +38,11 @@ class Product_service {
         this.findId = async (req, res) => {
             let id = +req.params.id;
             return await this.productRepository.findOneById({ id: id });
+        };
+        this.deleteProduct = async (req, res) => {
+            let id = +req.params.id;
+            await this.productRepository.delete({ id: id });
+            res.redirect(301, '/products');
         };
         data_source_1.AppDataSource.initialize().then(connection => {
             console.log('Connect database success');

@@ -165,9 +165,9 @@
                                 <img src="<%= item.image %>" style="width: 400px; height: 600px; object-fit: cover; margin: auto "alt="">
                             </a>
                             <div class="product-action">
-                                <a href=""><i class="fa fa-trash"></i></a>
+                                <a href="/delete/<%=item.id%>"><i class="fa fa-trash"></i></a>
                                 <a href="/edit/<%= item.id %>"><i class="fa fa-cog"></i></a>
-                                <a href=""><i class="fa fa-search"></i></a>
+                                <a href="/detail/<%=item.id%>"><i class="fa fa-search"></i></a>
                             </div>
                         </div>
                         <div class="product-price">
