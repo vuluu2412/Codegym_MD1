@@ -5,9 +5,6 @@ const data_source_1 = require("../data-source");
 const detailProduct_1 = require("../model/detailProduct");
 class Detail_service {
     constructor() {
-        this.findAll = async (req, res) => {
-            let listDetail = await this.detailRepository.find();
-        };
         this.findId = async (req, res) => {
             let id = +req.params.id;
             return await this.detailRepository.find({

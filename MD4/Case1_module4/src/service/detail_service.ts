@@ -11,11 +11,6 @@ export class Detail_service {
         })
         this.detailRepository = AppDataSource.getRepository(DetailProduct)
     }
-
-    findAll = async (req: Request, res: Response) => {
-        let listDetail = await this.detailRepository.find();
-
-    }
     findId = async (req:Request,res:Response)=>{
         let id = +req.params.id;
       return await this.detailRepository.find({
