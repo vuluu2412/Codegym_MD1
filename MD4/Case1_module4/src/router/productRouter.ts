@@ -9,3 +9,7 @@ productRouter.post('/edit/:id',product_controller.editP);
 productRouter.get('/delete/:id',product_controller.showFormDelete);
 productRouter.post('/delete/:id',product_controller.deleteP);
 productRouter.get('/detail/:id',product_controller.showDetail);
+productRouter.get('/login',product_controller.showLogin);
+productRouter.post('/login',product_controller.login);
+productRouter.get('/register',product_controller.showRegister);
+productRouter.post('/register',product_controller.register);

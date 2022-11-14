@@ -11,6 +11,10 @@ export declare class Product_controller {
     showFormDelete: (req: Request, res: Response) => Promise<void>;
     deleteP: (req: Request, res: Response) => Promise<void>;
     showDetail: (req: Request, res: Response) => Promise<void>;
+    showLogin: (req: Request, res: Response) => Promise<void>;
+    login: (req: Request, res: Response) => Promise<void>;
+    showRegister: (req: Request, res: Response) => Promise<void>;
+    register: (req: Request, res: Response) => Promise<void>;
 }
 declare const _default: Product_controller;
 export default _default;

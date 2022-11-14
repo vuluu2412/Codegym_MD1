@@ -42,6 +42,38 @@ class Product_controller {
                 listDetail: listDetail
             });
         };
+        this.showLogin = async (req, res) => {
+            res.render('login/login');
+        };
+        this.login = async (req, res) => {
+            let status = await this.productService.checkAccount(req, res);
+            if (status === true) {
+                res.redirect(301, '/products');
+            }
+            else {
+                res.redirect(301, '/register');
+            }
+        };
+        this.showRegister = async (req, res) => {
+            res.render('login/register');
+        };
+        this.register = async (req, res) => {
+            let listAccount = await this.productService.findAllAccount(req, res);
+            let flag = false;
+            for (let item of listAccount) {
+                if (item.username === req.body.username) {
+                    flag = true;
+                    break;
+                }
+            }
+            if (flag === true) {
+                res.redirect(301, '/register');
+            }
+            else {
+                await this.productService.createAccount(req, res);
+                res.redirect(301, '/login');
+            }
+        };
         this.productService = new product_service_1.Product_service();
         this.detailService = new detail_service_1.Detail_service();
     }

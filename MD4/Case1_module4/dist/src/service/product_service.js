@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Product_service = void 0;
 const data_source_1 = require("../data-source");
 const product_1 = require("../model/product");
+const account_1 = require("../model/account");
 class Product_service {
     constructor() {
         this.findAll = async (req, res) => {
@@ -44,10 +45,32 @@ class Product_service {
             await this.productRepository.delete({ id: id });
             res.redirect(301, '/products');
         };
+        this.createAccount = async (req, res) => {
+            let newAccount = {
+                username: req.body.username,
+                password: req.body.password
+            };
+            await this.accountRepository.save(newAccount);
+        };
+        this.checkAccount = async (req, res) => {
+            let account = await this.accountRepository.find();
+            let status = false;
+            for (let item of account) {
+                if (item.username === req.body.username && item.password === req.body.password) {
+                    status = true;
+                }
+            }
+            return status;
+        };
+        this.findAllAccount = async (req, res) => {
+            let account = await this.accountRepository.find();
+            return account;
+        };
         data_source_1.AppDataSource.initialize().then(connection => {
             console.log('Connect database success');
         });
         this.productRepository = data_source_1.AppDataSource.getRepository(product_1.Product);
+        this.accountRepository = data_source_1.AppDataSource.getRepository(account_1.Account);
     }
 }
 exports.Product_service = Product_service;

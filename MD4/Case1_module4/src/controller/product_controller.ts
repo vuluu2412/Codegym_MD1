@@ -51,6 +51,36 @@ export class Product_controller {
 
         });
     }
+    showLogin = async (req: Request, res: Response) => {
+        res.render('login/login');
+    }
+    login = async (req: Request, res: Response) => {
+        let status = await this.productService.checkAccount(req, res);
+        if (status === true) {
+            res.redirect(301, '/products')
+        } else {
+            res.redirect(301, '/register')
+        }
+    }
+    showRegister = async (req: Request, res: Response) => {
+        res.render('login/register');
+    }
+    register = async (req: Request, res: Response) => {
+        let listAccount = await this.productService.findAllAccount(req, res)
+        let flag = false;
+        for (let item of listAccount) {
+            if (item.username === req.body.username) {
+                flag = true;
+                break;
+            }
+        }
+        if (flag === true) {
+            res.redirect(301, '/register')
+        } else {
+            await this.productService.createAccount(req, res);
+            res.redirect(301, '/login')
+        }
+    }
 }
 
 export default new Product_controller();
