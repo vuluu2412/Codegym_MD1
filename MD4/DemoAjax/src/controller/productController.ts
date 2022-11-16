@@ -19,7 +19,7 @@ class ProductController{
         })
     }
     deleteProduct = async (req:Request,res:Response)=>{
-        await Product.deleteOne(req.body);
+        await Product.deleteOne({_id:req.params.id},req.body);
         return res.status(200).json({
             message: "delete success"
         })
