@@ -26,6 +26,10 @@ class ProductController {
                 message: "delete success"
             });
         };
+        this.findByIdProduct = async (req, res) => {
+            let p = await products_1.Product.findById(req.params.id);
+            res.status(200).json(p);
+        };
     }
 }
 exports.default = new ProductController();

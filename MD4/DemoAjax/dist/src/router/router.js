@@ -11,4 +11,5 @@ exports.router.get('/products', productController_1.default.getAll);
 exports.router.post('/products', productController_1.default.addProduct);
 exports.router.put('/products/:id', productController_1.default.editProduct);
 exports.router.delete('/products/:id', productController_1.default.deleteProduct);
+exports.router.get('/products/:id', productController_1.default.findByIdProduct);
 //# sourceMappingURL=router.js.map

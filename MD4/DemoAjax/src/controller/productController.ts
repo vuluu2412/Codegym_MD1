@@ -24,6 +24,10 @@ class ProductController{
             message: "delete success"
         })
     }
+    findByIdProduct= async (req:Request,res:Response)=> {
+      let p = await Product.findById(req.params.id);
+         res.status(200).json(p)
 
+    }
 }
 export default new ProductController();

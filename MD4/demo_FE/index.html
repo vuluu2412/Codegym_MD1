@@ -26,8 +26,9 @@
     <tbody id="products">
 
     </tbody>
+<!--    Create-->
     <div>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Create
         </button>
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -38,14 +39,14 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                            <div class="mb-3">
-                                <label  class="form-label" >Name</label>
-                                <input id="name" type="text" class="form-control"  aria-describedby="emailHelp">
-                            </div>
-                            <div class="mb-3">
-                                <label  class="form-label" >Price</label>
-                                <input id="price" type="number" class="form-control" >
-                            </div>
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                            <input id="name" type="text" class="form-control" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Price</label>
+                            <input id="price" type="number" class="form-control">
+                        </div>
                         <div class="mb-3">
                             <label class="form-label">Image</label>
                             <input id="image" type="text" class="form-control">
@@ -53,7 +54,41 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" onclick="create()" data-bs-dismiss="modal">Save</button>
+                        <button type="button" class="btn btn-primary" onclick="create()" data-bs-dismiss="modal">Save
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--    Edit-->
+    <div>
+        <div class="modal fade" id="exampleModalEdit" tabindex="-1" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="edit">Form Edit</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                            <input id="nameEdit" type="text" class="form-control" aria-describedby="emailHelp" value="">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Price</label>
+                            <input id="priceEdit" type="number" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Image</label>
+                            <input id="imageEdit" type="text" class="form-control">
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="edit()" data-bs-dismiss="modal">Save
+                        </button>
                     </div>
                 </div>
             </div>
@@ -69,7 +104,6 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
 <script>
-
     showAll();
 
     function showAll() {
@@ -81,33 +115,33 @@
                 let htmlProducts = ``;
                 for (let i = 0; i < products.length; i++) {
                     htmlProducts += `<tr>
-                        <td>${i+1}</td>
+                        <td>${i + 1}</td>
                         <td>${products[i].name}</td>
                         <td>${products[i].price}</td>
                         <td><img src="${products[i].image}" alt=""></td>
-                        <td><button>Edit</button></td>
                         <td><button onclick="showFormDelete('${products[i]._id}')">Delete</button></td>
+                        <td><button  data-bs-toggle="modal" data-bs-target="#exampleModalEdit" onclick="showFormEdit('${products[i]._id}')">Edit</button></td>
                     </tr>`
                 }
-              $('#products').html(htmlProducts);
+                $('#products').html(htmlProducts);
             }
         })
     };
 
-    function create(){
-let name = $('#name').val();
-let price = $('#price').val();
-let image = $('#image').val();
-let product = {
-    name: name,
-    price:price,
-    image:image
-}
+    function create() {
+        let name = $('#name').val();
+        let price = $('#price').val();
+        let image = $('#image').val();
+        let product = {
+            name: name,
+            price: price,
+            image: image
+        }
         $.ajax({
             type: 'POST',
             url: "http://localhost:3000/products",
-            headers:{
-              'Content-type':'application/json',
+            headers: {
+                'Content-type': 'application/json',
             },
             data: JSON.stringify(product),
             success: () => {
@@ -117,13 +151,13 @@ let product = {
         })
     }
 
-    function resetFormCreate(){
+    function resetFormCreate() {
         $('#name').val('');
-         $('#price').val('');
+        $('#price').val('');
         $('#image').val('');
     }
 
-    function showFormDelete(id){
+    function showFormDelete(id) {
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
                 confirmButton: 'btn btn-success',
@@ -142,6 +176,16 @@ let product = {
             reverseButtons: true
         }).then((result) => {
             if (result.isConfirmed) {
+                $.ajax({
+                    type: 'DELETE',
+                    url: `http://localhost:3000/products/${id}`,
+                    headers: {
+                        'Content-type': 'application/json',
+                    },
+                    success: () => {
+                        showAll()
+                    }
+                });
                 swalWithBootstrapButtons.fire(
                     'Deleted!',
                     'Your file has been deleted.',
@@ -158,16 +202,46 @@ let product = {
                 )
             }
         });
+
+    }
+
+    let editId;
+
+    function showFormEdit(id) {
         $.ajax({
-            type: 'DELETE',
-            url: "http://localhost:3000/products/:id",
-            headers:{
-                'Content-type':'application/json',
-            },
-            success: () => {
-                showAll()
+            type: 'GET',
+            url: `http://localhost:3000/products/${id}`,
+            success: (product) => {
+                $('#nameEdit').val(product.name);
+                $('#priceEdit').val(product.price);
+                $('#imageEdit').val(product.image);
+                editId = id;
             }
-        });
+        })
+
+    }
+
+    function edit() {
+        let id = editId;
+        let name = $('#nameEdit').val();
+        let price = $('#priceEdit').val();
+        let image = $('#imageEdit').val();
+        let product = {
+            name: name,
+            price: price,
+            image: image
+        }
+        $.ajax({
+            type: 'PUT',
+            url: `http://localhost:3000/products/${id}`,
+            headers: {
+                'Content-type': 'application/json',
+            },
+            data: JSON.stringify(product),
+            success: () => {
+                showAll();
+            }
+        })
     }
 </script>
 </body>
